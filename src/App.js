@@ -1,22 +1,17 @@
 import React from 'react';
-import model from './model'
-import {StoreProvider,createStore } from 'easy-peasy';
+import ElectionsStore from './components/elections/elections-store';
 import './App.css';
-import Election from './components/Elections'
-import States from './components/States'
-
-const store=createStore(model);
+import Election from './components/elections/Elections';
 
 function App() {
-  return (
-    <StoreProvider store={store}>
-    <div className="App">
-      <States/>
-      <Election/>
-    </div>
-    </StoreProvider>
-
-  );
+	
+	return (
+		<ElectionsStore.Provider>
+			<div className="App">
+				<Election />
+			</div>
+		</ElectionsStore.Provider>
+	);
 }
 
 export default App;
