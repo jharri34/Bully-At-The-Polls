@@ -1,8 +1,11 @@
 // eslint-disable-next-line
+import config from '../shared/config'
+
 
 export async function getElections() {
-  
-    let data = await (await (fetch(`https://www.googleapis.com/civicinfo/v2/elections?key=${process.env.REACT_APP_API_KEY}`)
+
+    
+    let data = await (await (fetch(config.CIVIC_URL)
     .then(res => {
       return res.json()
     })
@@ -10,7 +13,6 @@ export async function getElections() {
       console.log(`Error: ${err}`)
     })
   ))
-  console.log(data);
   return data   
  
   }

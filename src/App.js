@@ -1,5 +1,5 @@
 import React from 'react';
-import ElectionsStore from './components/elections/elections-store';
+import ElectionsStore from './components/elections/Elections-Store';
 import './App.css';
 import Election from './components/elections/Elections';
 

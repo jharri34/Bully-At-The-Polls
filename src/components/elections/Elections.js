@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import ElectionDetails from './ElectionDetails';
-import ElectionStore from './elections-store';
+import ElectionStore from './Elections-Store';
 
-import { useStoreState } from 'easy-peasy';
 
 function Elections() {
 	
-	const { elections,error,isLoading } = ElectionStore.useStoreState(state => state);
+	const { elections,isLoading } = ElectionStore.useStoreState(state => state);
 	const { getElections  } = ElectionStore.useStoreActions((actions) => actions);
-	console.log(elections)
+	
 	useEffect(() => {
 		getElections();
+	// eslint-disable-next-line	
 	}, []);
+
+	console.log(elections,isLoading)
 	return(
 		<>
 		{isLoading ? (
