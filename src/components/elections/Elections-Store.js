@@ -2,7 +2,7 @@ import { action, createContextStore, thunk } from 'easy-peasy';
 import { getElections } from './Elections-Service';
 
 const ElectionStore = createContextStore({
-	elections: [],
+	elections:[],
 	error: '',
 	isLoading: false,
 
@@ -10,7 +10,7 @@ const ElectionStore = createContextStore({
 	getElections: thunk(async (actions) => {
 		actions.setIsLoading();
 		try {
-			const { data } = await getElections()
+			const  data  = await getElections()
 			actions.setElections(data);
 		} catch (e) {
 			actions.setError(e);
@@ -19,7 +19,8 @@ const ElectionStore = createContextStore({
 	}),
 	/*actions*/
 	setElections: action((state, elections) => {
-		state.elections = elections;
+		
+		state.elections = elections.elections;
 	}),
 	setError: action((state, error) => {
 		state.error = error.message;
