@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ElectionDetails = ({ election }) => {
+	
 	return (
 		<div>
 			<div>election id {election.id}</div>
