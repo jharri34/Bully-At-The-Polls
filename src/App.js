@@ -9,21 +9,16 @@ import Voters from './components/voters/Voters';
 function App() {
 	
 	return (
-		// <ElectionsStore.Provider>
-		// 	<VotersStore.Provider>
-		// 	<div className="App">
-		// 		<Election />
-		// 		<Voters/>
-		// 	</div>
-		// 	</VotersStore.Provider>
-		// </ElectionsStore.Provider>
-			
-		<VotersStore.Provider>
+		<ElectionsStore.Provider>
+			<VotersStore.Provider>
 			<div className="App">
-		
-		 		<Voters/>
-		 	</div>
-		 	</VotersStore.Provider>
+				<Election />
+				<Voters/>
+			</div>
+			</VotersStore.Provider>
+		</ElectionsStore.Provider>
+			
+	
 		
 	);
 }
