@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ElectionStore from './Elections-Store';
-import ElectionDetails from './ElectionDetails'
+import ElectionDetails from './Election-Details'
 
 function Elections() {
 	// eslint-disable-next-line	
@@ -28,8 +28,8 @@ function Elections() {
 		
 ) : (
 	
-	elections.map((election,item) => (
-		<div><ElectionDetails election={elections} key={item} /></div>
+		elections.map((election,item) => (
+		<div><ElectionDetails election={election} key={election.id} /></div>
 		))
 )}
 		</>

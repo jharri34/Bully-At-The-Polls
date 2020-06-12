@@ -1,9 +1,9 @@
 // eslint-disable-next-line
 import config from '../shared/config'
 
-export async function getElections() {
-   
-    let data =await fetch(config.ELECTION_URL)
+export async function getVoters() {
+    
+    let data =await fetch(config.VOTER_URL)
     try {
       const resp = await data.json()
       return resp  

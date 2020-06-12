@@ -1,7 +1,8 @@
  
 
 const config = { 
-    CIVIC_URL : process.env.REACT_APP_CIVIC_URL
+    ELECTION_URL : process.env.REACT_APP_ELECTION_URL,
+    VOTER_URL : process.env.REACT_APP_VOTER_URL
 }
 
 export default config
