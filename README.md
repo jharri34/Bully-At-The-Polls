@@ -1,6 +1,5 @@
 # Bully-At-The-Polls
 
-
 Getting Started 
 
 https://www.vagrantup.com/docs/installation
