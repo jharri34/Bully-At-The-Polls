@@ -4,8 +4,18 @@ import Voters from '../voters/Voters'
 function Main() {
     return (
 <div className="main">Main
-<Elections/>
-<Voters/>
+    <br/>
+    <form>
+        <label>
+            <input type="text" name="name" />
+        </label>
+        <input type="submit" value="search" />
+    </form>
+    <br/>
+
+    <Elections/>
+    <br/>
+    <Voters/>
 </div>
 
     )

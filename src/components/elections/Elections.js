@@ -10,7 +10,8 @@ function Elections() {
 	}));
 	
 	const getElections   = ElectionStore.useStoreActions(actions => actions.getElections)
-	
+	//The Effect Hook lets you perform side effects in function components:
+	//https://reactjs.org/docs/hooks-effect.html
 	useEffect(() => {
 		getElections();
 	// eslint-disable-next-line	
