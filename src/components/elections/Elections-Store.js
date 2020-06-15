@@ -7,10 +7,10 @@ const ElectionStore = createContextStore({
 	isLoading: false,
 
 	/*actions thunk side effects*/
-	getElections: thunk(async (actions) => {
+	getElections: thunk(async (actions,address) => {
 		actions.setIsLoading();
 		try {
-			const  data  = await getElections()
+			const  data  = await getElections(address)
 			actions.setElections(data);
 		} catch (e) {
 			actions.setError(e);

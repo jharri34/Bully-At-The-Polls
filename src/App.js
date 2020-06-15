@@ -5,6 +5,7 @@ import VotersStore from './components/voters/Voters-Store';
 import Routes from './components/shared/routes'
 import Header from  './components/shared/header'
 import { BrowserRouter } from 'react-router-dom';
+import Footer from './components/shared/footer';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 						<div className="App">
 							<Header/>
 							<Routes />
+							<Footer/>
 						</div>
 					</BrowserRouter>
 				</React.Fragment>

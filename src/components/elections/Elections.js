@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ElectionStore from './Elections-Store';
 import ElectionDetails from './Election-Details'
 
-function Elections() {
+const Elections = () => {
 	// eslint-disable-next-line	
 	const { elections,isLoading } = ElectionStore.useStoreState(state => ({
 		elections:state.elections,
@@ -17,8 +17,6 @@ function Elections() {
 	// eslint-disable-next-line	
 	}, []);
 
-	
-	console.log(elections.elections)
 	
 	return(
 		<>
@@ -35,5 +33,5 @@ function Elections() {
 )}
 		</>
 	)
-}
+};
 export default Elections;

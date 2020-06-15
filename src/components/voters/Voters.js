@@ -6,7 +6,8 @@ function Voters() {
 	// eslint-disable-next-line	
 	const { voters,isLoading } = VotersStore.useStoreState(state => ({
 		voters:state.voters,
-		isLoading:state.isLoading
+		isLoading:state.isLoading,
+
 	}));
 	
 	const getVoters   = VotersStore.useStoreActions(actions => actions.getVoters)
