@@ -10,8 +10,7 @@ const BullyStore = createContextStore({
     voterError: '',
     voterIsLoading:'',
 
-    /*actions thunk side effects*/
-    
+
     /*actions thunk side effects*/
 	getElections: thunk(async (actions) => {
 		actions.setElectionIsLoading();
@@ -19,12 +18,12 @@ const BullyStore = createContextStore({
 			const  data  = await getElections()
 			actions.setElections(data);
 		} catch (e) {
-			actions.setError(e);
+			actions.setElectionError(e);
 		}
 		actions.setElectionIsLoading();
 	}),
 	getVoters: thunk(async (actions,address) => {
-		actions.voterIsLoading();
+		actions.setVoterIsLoading();
 		try {
 			const  data  = await getVoters(address)
 			actions.setVoters(data);

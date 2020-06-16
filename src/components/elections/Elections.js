@@ -17,7 +17,6 @@ const Elections = () => {
 	// eslint-disable-next-line	
 	}, []);
 
-	
 	return(
 		<>
 		{electionIsLoading ? (
@@ -26,9 +25,10 @@ const Elections = () => {
         </div>
 		
 ) : (
-	
-		elections.map((election,item) => (
-		<div><ElectionDetails election={election} key={election.id} /></div>
+		
+
+	elections.map((election,item) => (
+		<div key={election.id}><ElectionDetails election={election}  /></div>
 		))
 )}
 		</>

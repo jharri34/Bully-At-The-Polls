@@ -4,10 +4,9 @@ import Voters from '../voters/Voters';
 function Main() {
 	const [ showElection, setShowElection ] = useState(false);
 	const [ showVoter, setShowVoter ] = useState(false);
-    const [ address, setAddress ] = useState('');
+	const [ address, setAddress ] = useState("");
     
 
-    
 	const isValidAddress = (address) => {
         if(address !== null || address !== '' ){
             //Validate address here
@@ -18,7 +17,7 @@ function Main() {
 	const handleAddress = () => {
         if(isValidAddress){
         setShowElection(true)
-        setShowVoter(false)
+        setShowVoter(true)
         }
 	};
 
@@ -42,8 +41,8 @@ function Main() {
 
 	return (
 		<div className="main">
-			<form onSubmit={handleSubmit} onKeyPress={handleKeyPress} >
-				<input type="text" value={address} onChange={handleChange} placeholder="123 Test Address" />
+			<form onSubmit={(e) => handleSubmit(e)} onKeyPress={(e) => handleKeyPress(e)} >
+				<input type="text" value={address || ""} onChange={(e) => handleChange(e)} placeholder="123 Test Address" />
 			</form>
 			{showElection ? <Elections address={address}/> : <div />}
 			{showVoter ? <Voters /> : <div />}

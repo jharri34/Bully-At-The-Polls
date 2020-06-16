@@ -13,7 +13,7 @@ function Header() {
 
 	return (
 		<div className="header">
-			<a onClick={handleOnClick}>BULLY AT THE POLLS</a>
+			<a onClick={() => handleOnClick()}>BULLY AT THE POLLS</a>
 		</div>
 	);
 }
