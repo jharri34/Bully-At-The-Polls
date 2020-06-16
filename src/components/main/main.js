@@ -18,7 +18,7 @@ function Main() {
 	const handleAddress = () => {
         if(isValidAddress){
         setShowElection(true)
-        setShowVoter(false)
+        setShowVoter(true)
         }
 	};
 
@@ -47,7 +47,7 @@ function Main() {
 				<Form.Control type="text" value={address || ""} onChange={(e) => handleChange(e)} placeholder="123 Test Address" />
 			</Form>
 			{showElection ? <Elections address={address}/> : <div />}
-			{showVoter ? <Voters /> : <div />}
+			{showVoter ? <Voters address={address} /> : <div />}
 		</div>
 	);
 }

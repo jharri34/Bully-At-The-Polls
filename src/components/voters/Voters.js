@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react';
 import BullyStore from '../shared/bullystore'
 import VoterDetails from './Voter-Details'
 
-function Voters() {
+function Voters(address) {
 	// eslint-disable-next-line	
 	const { voters,voterIsLoading,elections,electionIsLoading } = BullyStore.useStoreState(state => ({
 		voters:state.voters,
@@ -19,19 +19,19 @@ function Voters() {
 		if(elections.length > 0){
 			elections.map(election => {
 				console.log(election.id)
-				temp = [...temp, election.id]
+			temp = [...temp, election.id]
 				setElectionIds(election.id)
 			});
 		}
 	}
-
-	const getVoters   = BullyStore.useStoreActions(actions => actions.getVoters)
+	console.log(elections)
+	const getVoters   = BullyStore.useStoreActions((actions) => actions.getVoters)
 	
 
-	getElectionId(elections)
+	
 	useEffect(() => {
 		
-		getVoters();
+		getVoters(address,elections);
 	// eslint-disable-next-line	
 	}, []);
 
@@ -45,7 +45,7 @@ function Voters() {
 		
 ) : (
 	voters.map((voter,item) => (
-		<div key={voter.id}><VoterDetails voter={voter}  /></div>
+		<div key={item}><VoterDetails voter={voter}  /></div>
 		))
 
 )}
