@@ -2,9 +2,11 @@
 import config from '../shared/config'
 
 export async function getElections() {
-   
-    let data = await fetch(config.ELECTION_URL)
+    let url =config.ELECTION_URL + config.QUERY_KEY + config.API_KEY
+    console.log(url)
+    let data = await fetch(url)
     try {
+      console.log(url)
       const resp = await data.json()
       return resp  
     }catch(exception){
