@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import VotersStore from './Voters-Store';
+import BullyStore from '../shared/bullystore'
 import VoterDetails from './Voter-Details'
 
 function Voters() {
 	// eslint-disable-next-line	
-	const { voters,isLoading } = VotersStore.useStoreState(state => ({
+	const { voters,voterIsLoading } = BullyStore.useStoreState(state => ({
 		voters:state.voters,
-		isLoading:state.isLoading,
+		voterIsLoading:state.voterIsLoading,
 
 	}));
 	
-	const getVoters   = VotersStore.useStoreActions(actions => actions.getVoters)
+	const getVoters   = BullyStore.useStoreActions(actions => actions.getVoters)
 	
 	useEffect(() => {
 		getVoters();
@@ -20,7 +20,7 @@ function Voters() {
 	
 	return(
 		<>
-		{isLoading ? (
+		{voterIsLoading ? (
         <div>
 			Testing
         </div>

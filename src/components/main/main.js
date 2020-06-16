@@ -19,7 +19,6 @@ function Main() {
         if(isValidAddress){
         setShowElection(true)
         setShowVoter(false)
-        // console.log(`address in handleAddress .... ${address}`)
         }
 	};
 
