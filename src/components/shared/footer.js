@@ -12,7 +12,7 @@ function Footer() {
 	
 
 	return (
-		<div className="header">
+		<div className="footer">
 			<a onClick={handleOnClick}>Footer</a>
 		</div>
 	);

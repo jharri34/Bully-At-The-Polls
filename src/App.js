@@ -5,6 +5,7 @@ import Header from  './components/shared/header'
 import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/shared/footer';
 import BullyStore from './components/shared/bullystore'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 	return (

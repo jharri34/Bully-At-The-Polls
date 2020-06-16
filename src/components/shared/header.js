@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
+import {Nav, Navbar} from "react-bootstrap";
 
 function Header() {
 	
@@ -13,7 +14,15 @@ function Header() {
 
 	return (
 		<div className="header">
-			<a onClick={() => handleOnClick()}>BULLY AT THE POLLS</a>
+		<Navbar bg="light" expand="lg">
+			<Navbar.Brand href="#home">BULLY AT THE POLLS</Navbar.Brand>
+			<Navbar.Toggle aria-controls="basic-navbar-nav" />
+			<Navbar.Collapse id="basic-navbar-nav">
+				<Nav className="mr-auto">
+					<Nav.Link href="#home" onClick={() => handleOnClick()}>HOME</Nav.Link>
+				</Nav>
+			</Navbar.Collapse>
+		</Navbar>
 		</div>
 	);
 }
