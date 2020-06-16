@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Elections from '../elections/Elections';
 import Voters from '../voters/Voters';
+import Form from "react-bootstrap/Form";
 function Main() {
 	const [ showElection, setShowElection ] = useState(false);
 	const [ showVoter, setShowVoter ] = useState(false);
@@ -41,9 +42,10 @@ function Main() {
 
 	return (
 		<div className="main">
-			<form onSubmit={(e) => handleSubmit(e)} onKeyPress={(e) => handleKeyPress(e)} >
-				<input type="text" value={address || ""} onChange={(e) => handleChange(e)} placeholder="123 Test Address" />
-			</form>
+
+			<Form onSubmit={(e) => handleSubmit(e)} onKeyPress={(e) => handleKeyPress(e)} >
+				<Form.Control type="text" value={address || ""} onChange={(e) => handleChange(e)} placeholder="123 Test Address" />
+			</Form>
 			{showElection ? <Elections address={address}/> : <div />}
 			{showVoter ? <Voters /> : <div />}
 		</div>

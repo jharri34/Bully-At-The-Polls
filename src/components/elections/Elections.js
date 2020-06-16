@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import BullyStore from '../shared/bullystore'
 import ElectionDetails from './Election-Details'
+import Table from "react-bootstrap/Table";
 
 const Elections = () => {
 	// eslint-disable-next-line	
@@ -23,12 +24,14 @@ const Elections = () => {
         <div>
 			Testing
         </div>
-		
+
 ) : (
-		
+
 
 	elections.map((election,item) => (
-		<div key={election.id}><ElectionDetails election={election}  /></div>
+		<Table striped bordered hover key={election.id}>
+			<ElectionDetails election={election}  />
+		</Table>
 		))
 )}
 		</>
