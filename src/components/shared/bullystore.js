@@ -13,28 +13,35 @@ const BullyStore = createContextStore({
 
     /*actions thunk side effects*/
 	getElections: thunk(async (actions) => {
-		actions.setElectionIsLoading();
+        actions.setElectionIsLoading(false);
+        let data
 		try {
-			const  data  = await getElections()
-			actions.setElections(data);
+            const data  = await getElections()
+            console.log(data)
+            actions.setElections(data);
+            actions.setElectionIsLoading(true);
+			
 		} catch (e) {
 			actions.setElectionError(e);
-		}
-		actions.setElectionIsLoading();
+        }
+        
+		
 	}),
 	getVoters: thunk(async (actions,address) => {
-		actions.setVoterIsLoading();
+        let data
+		actions.setVoterIsLoading(false);
 		try {
-			const  data  = await getVoters(address)
-			actions.setVoters(data);
+		 data  = await getVoters(address)
+         actions.setVoters(data);
+         actions.setVoterIsLoading(true);
 		} catch (e) {
 			actions.setVoterError(e);
-		}
-		actions.setVoterIsLoading();
+        }
+
 	}),
     /*actions*/
     setElections: action((state, elections) => {
-		
+		console.log(elections)
 		state.elections = elections.elections;
 	}),
 	setVoters: action((state, voters) => {

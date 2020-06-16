@@ -17,7 +17,7 @@ function Main() {
 	const handleAddress = () => {
         if(isValidAddress){
         setShowElection(true)
-        setShowVoter(true)
+        setShowVoter(false)
         }
 	};
 
