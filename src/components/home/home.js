@@ -18,7 +18,8 @@ function Home() {
 
 	return (
 		<div className="home">
-			<h1 className='quote'>Quote</h1>
+			<h1 className='quote'>"Voting is not only our right, it is our power. <br /> When we vote, we take back our power to choose, to speak up, and to stand with those who support us and each other." <br />
+			- Loung Ung</h1>
 			<Button onClick={handleOnClick}>Locate Election</Button>
 		</div>
 	);
