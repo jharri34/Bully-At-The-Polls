@@ -29,7 +29,7 @@ const Elections = () => {
 
 
 	elections.map((election,item) => (
-		<Table striped bordered hover key={election.id}>
+		<Table striped bordered hover key={item}>
 			<ElectionDetails election={election}  />
 		</Table>
 		))

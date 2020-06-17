@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import BullyStore from '../shared/bullystore'
 import VoterDetails from './Voter-Details'
+import Table from "react-bootstrap/Table";
 
 function Voters(address) {
 	// eslint-disable-next-line	
@@ -11,41 +12,36 @@ function Voters(address) {
 		electionIsLoading:state.elections
 
 	}));
-	
-	const [electionIds, setElectionIds] = useState([])
 
-	const getElectionId = (elections) =>{
-		let temp = []
-		if(elections.length > 0){
-			elections.map(election => {
-				console.log(election.id)
-			temp = [...temp, election.id]
-				setElectionIds(election.id)
-			});
-		}
-	}
-	console.log(elections)
+	const setAddress   = BullyStore.useStoreActions((actions) => actions.setAddress)
 	const getVoters   = BullyStore.useStoreActions((actions) => actions.getVoters)
+	const setElectionIds = BullyStore.useStoreActions((actions) => actions.setElectionIds)
 	
 
 	
 	useEffect(() => {
-		
-		getVoters(address,elections);
+		setAddress(address)
+		setElectionIds(elections)
+		getVoters(address);
 	// eslint-disable-next-line	
-	}, []);
+	}, [address, elections]);
 
 	
 	return(
 		<>
 		{voterIsLoading ? (
         <div>
+				{/* Spinner goes here */}
 			Testing
         </div>
 		
 ) : (
 	voters.map((voter,item) => (
-		<div key={item}><VoterDetails voter={voter}  /></div>
+			
+				<Table striped bordered hover key={item}>
+				<VoterDetails voter={voter}  />
+		</Table>
+			
 		))
 
 )}
