@@ -6,12 +6,12 @@ const ElectionDetails = ({ election }) => {
 
 	
 	return (
-			<tr>
-				<td>{election.id}</td>
-				<td>{election.name}</td>
-				<td>{election.electionDay}</td>
-				<td>{election.ocdDivisionId}</td>
-			</tr>
+			<div>
+				<div>{election.id}</div>
+				<div>{election.name}</div>
+				<div>{election.electionDay}</div>
+				<div>{election.ocdDivisionId}</div>
+			</div>
 	);
 };
 

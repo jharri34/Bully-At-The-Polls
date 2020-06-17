@@ -1,0 +1,29 @@
+/* .main{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    background-image: url('https://images.unsplash.com/photo-1571609549239-bf07fb79f702?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
+    background-repeat: no-repeat;
+    max-height: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 545px;
+    flex-direction: column;
+} */
+
+/* .main-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.8;
+} */
+
+/* .main-form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+} */
