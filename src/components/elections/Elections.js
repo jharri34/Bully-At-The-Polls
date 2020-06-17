@@ -29,7 +29,7 @@ const Elections = () => {
 
 
 	elections.map((election,item) => (
-		<div  key={election.id}>
+		<div className='election-container' key={election.id}>
 			<ElectionDetails election={election}  />
 		</div>
 		))
