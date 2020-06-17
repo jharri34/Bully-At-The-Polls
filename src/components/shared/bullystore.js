@@ -17,7 +17,7 @@ const BullyStore = createContextStore({
 	getElections: thunk(async (actions) => {
         actions.setElectionIsLoading(false);
 		try {
-			console.log('in elections')
+
             const data  = await getElections()
             const resp = await data.json()
             actions.setElections(resp);
@@ -49,7 +49,6 @@ const BullyStore = createContextStore({
 	setVoters: action((state, voters) => {
 		
 		state.voters =voters;
-		console.log(voters)
     }),
     setElectionError: action((state, error) => {
 		state.electionError = error.message;

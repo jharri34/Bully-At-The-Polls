@@ -18,8 +18,7 @@ function Voters(address) {
 	const setElectionIds = BullyStore.useStoreActions((actions) => actions.setElectionIds)
 	
 
-	//The Effect Hook lets you perform side effects in function components:
-	//https://reactjs.org/docs/hooks-effect.html
+	
 	useEffect(() => {
 		setAddress(address)
 		setElectionIds(elections)
@@ -40,7 +39,13 @@ function Voters(address) {
 	Object.keys(voters).map((voter,item) => (
 			
 		<Table striped bordered hover key={item}>
-		<VoterDetails voter={voter}  />
+		<VoterDetails 
+		kind={voters["kind"]}
+		election={voters["election"]}
+		normalizedInput={voters["normalizedInput"]}
+		contests={voters["contests"]}
+		state={voters["state"]}
+		  />
 	</Table>
 	  
 	)))
