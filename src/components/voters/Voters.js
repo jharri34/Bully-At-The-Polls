@@ -5,11 +5,11 @@ import Table from "react-bootstrap/Table";
 
 function Voters(address) {
 	// eslint-disable-next-line	
-	const { voters,voterIsLoading,elections,electionIsLoading } = BullyStore.useStoreState(state => ({
+	const { voters,voterIsLoading,elections } = BullyStore.useStoreState(state => ({
 		voters:state.voters,
 		voterIsLoading:state.voterIsLoading,
 		elections:state.elections,
-		electionIsLoading:state.elections
+
 
 	}));
 
@@ -18,13 +18,14 @@ function Voters(address) {
 	const setElectionIds = BullyStore.useStoreActions((actions) => actions.setElectionIds)
 	
 
-	
+	//The Effect Hook lets you perform side effects in function components:
+	//https://reactjs.org/docs/hooks-effect.html
 	useEffect(() => {
 		setAddress(address)
 		setElectionIds(elections)
 		getVoters(address);
 	// eslint-disable-next-line	
-	}, [address, elections]);
+	}, []);
 
 	
 	return(
@@ -36,15 +37,15 @@ function Voters(address) {
         </div>
 		
 ) : (
-	voters.map((voter,item) => (
+	Object.keys(voters).map((voter,item) => (
 			
-				<Table striped bordered hover key={item}>
-				<VoterDetails voter={voter}  />
-		</Table>
-			
-		))
+		<Table striped bordered hover key={item}>
+		<VoterDetails voter={voter}  />
+	</Table>
+	  
+	)))
 
-)}
+}
 		</>
 	)
 }

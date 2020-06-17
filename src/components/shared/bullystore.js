@@ -1,10 +1,10 @@
 import { action, createContextStore, thunk } from 'easy-peasy';
-import { getVoters } from '../voters/Voters-Service'
+import { getVotersSvc } from '../voters/Voters-Service'
 import { getElections } from '../elections/Elections-Service';
 
 const BullyStore = createContextStore({
 	address:'',
-	voters:[],
+	voters:{},
 	electionIds: {},
     elections:[],
 	electionError: '',
@@ -17,6 +17,7 @@ const BullyStore = createContextStore({
 	getElections: thunk(async (actions) => {
         actions.setElectionIsLoading(false);
 		try {
+			console.log('in elections')
             const data  = await getElections()
             const resp = await data.json()
             actions.setElections(resp);
@@ -28,12 +29,11 @@ const BullyStore = createContextStore({
         
 		
 	}),
-	getVoters: thunk(async (actions) => {
-        
+	getVoters: thunk(async (actions) => { 
 		actions.setVoterIsLoading(false);
 		try {
-		console.log(actions.electionIds)
-         const data  = await getVoters(actions.address,actions.electionIds)
+		console.log('in getVoter')
+         const data  = await getVotersSvc(actions.address,actions.electionIds)
          const resp = await data.json()
          actions.setVoters(resp);
          actions.setVoterIsLoading(true);
@@ -48,7 +48,8 @@ const BullyStore = createContextStore({
 	}),
 	setVoters: action((state, voters) => {
 		
-		state.voters = [...state.voters,voters];
+		state.voters =voters;
+		console.log(voters)
     }),
     setElectionError: action((state, error) => {
 		state.electionError = error.message;
@@ -57,9 +58,7 @@ const BullyStore = createContextStore({
 	setElectionIds: action((state,elections) =>{
 		let electionId = []
 		if(elections.length > 0){
-			elections.map((election) => {
-				console.log(election.id)
-				
+			elections.map((election) => {			
 				electionId = [...electionId,election]
 			});
 		}
