@@ -1,14 +1,16 @@
 import React from 'react';
 
-const VoterDetails = ({ kind,election,normalizedInput,contests,state }) => {
-	console.log(kind)
-	console.log(election)
-	console.log(normalizedInput)
-	console.log(contests)
-	console.log(state)
+const VoterDetails = ({ voters, kind,election,normalizedInput,contests,state }) => {
+	// console.log(kind)
+	// console.log(election)
+	// console.log(normalizedInput)
+	// console.log(contests)
+	// console.log(state)
+	console.log(voters)
 	return (
+		
 		<>
-		<div>
+		{/* <div>
             Voter
 			<div>
 			Election
@@ -31,7 +33,7 @@ const VoterDetails = ({ kind,election,normalizedInput,contests,state }) => {
 			Office: {contests.office}
 	
 			</div>
-		</div>
+		</div> */}
 		</>
 	);
 };

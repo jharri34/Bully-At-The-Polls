@@ -1,57 +1,54 @@
-import React, { useEffect,useState } from 'react';
-import BullyStore from '../shared/bullystore'
-import VoterDetails from './Voter-Details'
-import Table from "react-bootstrap/Table";
+import React, { useEffect, useState } from 'react';
+import BullyStore from '../shared/bullystore';
+import VoterDetails from './Voter-Details';
+import Table from 'react-bootstrap/Table';
+import BullySpinner from '../shared/bullyspinner'
 
 function Voters(address) {
-	// eslint-disable-next-line	
-	const { voters,voterIsLoading,elections } = BullyStore.useStoreState(state => ({
-		voters:state.voters,
-		voterIsLoading:state.voterIsLoading,
-		elections:state.elections,
-
-
+	// eslint-disable-next-line
+	const { voters, voterIsLoading, elections } = BullyStore.useStoreState((state) => ({
+		voters: state.voters,
+		voterIsLoading: state.voterIsLoading,
+		elections: state.elections
 	}));
 
-	const setAddress   = BullyStore.useStoreActions((actions) => actions.setAddress)
-	const getVoters   = BullyStore.useStoreActions((actions) => actions.getVoters)
-	const setElectionIds = BullyStore.useStoreActions((actions) => actions.setElectionIds)
-	
+	const setAddress = BullyStore.useStoreActions((actions) => actions.setAddress);
+	const getVoters = BullyStore.useStoreActions((actions) => actions.getVoters);
+	const setElectionIds = BullyStore.useStoreActions((actions) => actions.setElectionIds);
 
-	
 	useEffect(() => {
-		setAddress(address)
-		setElectionIds(elections)
+		setAddress(address);
+		setElectionIds(elections);
 		getVoters(address);
-	// eslint-disable-next-line	
+		// eslint-disable-next-line
 	}, []);
 
-	
-	return(
-		<>
-		{voterIsLoading ? (
-        <div>
-				{/* Spinner goes here */}
-			Testing
-        </div>
+	return (
+		<div>
+			{(() => {
+				if (voterIsLoading === true && voterIsLoading !== undefined) {
+					return (
+						<Table striped bordered hover>
+							<VoterDetails
+								voters={voters}
+								kind={voters['kind']}
+								election={voters['election']}
+								normalizedInput={voters['normalizedInput']}
+								contests={voters['contests']}
+								state={voters['state']}
+							/>
+						</Table>
+					)
+				}else{
+					return (
+					<div>
+<BullySpinner/>
+				</div>
+					)
+				}
+			})()}
+		</div>
 		
-) : (
-	Object.keys(voters).map((voter,item) => (
-			
-		<Table striped bordered hover key={item}>
-		<VoterDetails 
-		kind={voters["kind"]}
-		election={voters["election"]}
-		normalizedInput={voters["normalizedInput"]}
-		contests={voters["contests"]}
-		state={voters["state"]}
-		  />
-	</Table>
-	  
-	)))
-
-}
-		</>
 	)
 }
 export default Voters;

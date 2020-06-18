@@ -1,7 +1,5 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import Footer from "../shared/footer";
-import Header from "../shared/header";
 import Button from 'react-bootstrap/Button';
 
 import './home.css'
