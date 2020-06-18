@@ -1,9 +1,7 @@
 import React from 'react';
-import Spinner from 'react-bootstrap/Spinner'
+import Spinner from 'react-bootstrap/Spinner';
 
 function BullySpinner() {
-
-
 	return (
 		<div className="spinner">
 			<Spinner animation="border" role="status">

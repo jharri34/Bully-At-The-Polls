@@ -1,40 +1,24 @@
 import React from 'react';
 
-const VoterDetails = ({ voters, kind,election,normalizedInput,contests,state }) => {
+const VoterDetails = ({ voters }) => {
 	// console.log(kind)
 	// console.log(election)
 	// console.log(normalizedInput)
 	// console.log(contests)
 	// console.log(state)
-	console.log(voters)
+	console.log(voters.kind)
+	console.log(voters.contests)
 	return (
 		
-		<>
-		{/* <div>
-            Voter
-			<div>
-			Election
-			<br/>
-			Election Name: {election.name}	
-			Election Day: {election.electionDay}
-			</div>
-			<div>
-			Location
-			<br/>
-			Address: {normalizedInput.line1} 
-			City: {normalizedInput.city} 
-			State: {normalizedInput.state}
-			Zip: {normalizedInput.zip}
-			</div>
-			<div>
-			Contests
-			<br/>
-			Type: {contests.type}
-			Office: {contests.office}
-	
-			</div>
-		</div> */}
-		</>
+		
+
+			voters.contests.map((contest,item) => (
+				<div>
+					{contest.type}
+				</div>
+			))
+			
+		
 	);
 };
 

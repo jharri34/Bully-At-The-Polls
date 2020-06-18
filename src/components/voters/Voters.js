@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BullyStore from '../shared/bullystore';
 import VoterDetails from './Voter-Details';
 import Table from 'react-bootstrap/Table';
-import BullySpinner from '../shared/bullyspinner'
+import BullySpinner from '../shared/bullyspinner';
 
 function Voters(address) {
 	// eslint-disable-next-line
@@ -15,40 +15,42 @@ function Voters(address) {
 	const setAddress = BullyStore.useStoreActions((actions) => actions.setAddress);
 	const getVoters = BullyStore.useStoreActions((actions) => actions.getVoters);
 	const setElectionIds = BullyStore.useStoreActions((actions) => actions.setElectionIds);
+	const setVoterIsLoading = BullyStore.useStoreActions((actions) => actions.setVoterIsLoading);
 
 	useEffect(() => {
 		setAddress(address);
 		setElectionIds(elections);
 		getVoters(address);
+		if (voters) {
+			setVoterIsLoading(true);
+		}
 		// eslint-disable-next-line
 	}, []);
 
 	return (
 		<div>
 			{(() => {
-				if (voterIsLoading === true && voterIsLoading !== undefined) {
+				if (
+					voterIsLoading === true &&
+					voterIsLoading !== undefined &&
+					voters !== undefined &&
+					Object.keys(voters).length !== 0
+				) {
+					console.log(voters['contests']);
 					return (
 						<Table striped bordered hover>
-							<VoterDetails
-								voters={voters}
-								kind={voters['kind']}
-								election={voters['election']}
-								normalizedInput={voters['normalizedInput']}
-								contests={voters['contests']}
-								state={voters['state']}
-							/>
+							<VoterDetails voters={voters} />
 						</Table>
-					)
-				}else{
+					);
+				} else {
 					return (
-					<div>
-<BullySpinner/>
-				</div>
-					)
+						<div>
+							<BullySpinner />
+						</div>
+					);
 				}
 			})()}
 		</div>
-		
-	)
+	);
 }
 export default Voters;

@@ -58,7 +58,6 @@ const BullyStore = createContextStore({
 		state.address = address;
 	}),
 	setElectionIsLoading: action((state,electionIsLoading) => {
-		console.log(`in setElection is Loading ${state.electionIsLoading}`)
 		state.electionIsLoading = electionIsLoading;
 	}),
 	setVoterError: action((state, error) => {
