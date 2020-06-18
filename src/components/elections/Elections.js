@@ -26,7 +26,7 @@ const Elections = (address) => {
 		[  ]
 	);
 	return (
-		<div>
+		<div className='election-container'>
 			{(() => {
 				if (electionIsLoading === true && electionIsLoading !== undefined && elections !== undefined) {
 					return <ElectionDetails elections={elections} />;

@@ -1,0 +1,46 @@
+.main{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    margin: 0 auto;
+    /* background-image: url(https://images.unsplash.com/photo-1571609549239-bf07fb79f702?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80); */
+    /* background-repeat: no-repeat; */
+    /* max-height: 100%; */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* height: 545px; */
+    flex-direction: row;
+    width: 100%; 
+
+} 
+
+.election-container{
+    display: flex;
+    /* flex-direction: row-reverse; */
+    border: 2px solid black;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 90px 8px;
+    padding: 20px 20px;
+    position: inherit;
+    /* height: 190px; */
+    /* left: 95px; */
+    /* top: 115px;*/
+
+}
+/* .main-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.8;
+} */
+
+/* .main-form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+} */
