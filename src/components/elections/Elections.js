@@ -29,7 +29,11 @@ const Elections = () => {
 
 
 	elections.map((election,item) => (
+
 		<div className='election-container' key={election.id}>
+
+		<Table striped bordered hover key={item}>
+
 			<ElectionDetails election={election}  />
 		</div>
 		))
