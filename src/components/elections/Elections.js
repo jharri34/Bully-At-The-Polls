@@ -21,7 +21,7 @@ const Elections = (address) => {
 		}
 
 		// eslint-disable-next-line
-	}, []);
+	}, [getElections,setElectionIsLoading]);
 	return (
 		<div className="election-container">
 			{(() => {

@@ -1,4 +1,8 @@
 import React from 'react';
+import VoterContest from './Voter-Contest'
+import VoterState from './Voter-State'
+import VoterReferendum from './Voter-Referendum'
+import VoterElectionData from './Voter-ElectionData'
 
 const VoterDetails = ({ voters }) => {
 	// console.log(kind)
@@ -6,20 +10,15 @@ const VoterDetails = ({ voters }) => {
 	// console.log(normalizedInput)
 	// console.log(contests)
 	// console.log(state)
-	console.log(voters.kind)
-	console.log(voters.contests)
+	console.log(voters)
 	return (
-		
-		
-
-			voters.contests.map((contest,item) => (
-				<div>
-					{contest.type}
-				</div>
-			))
-			
-		
-	);
+		<div>
+			<VoterState voterstate={ voters.state } />
+			<VoterReferendum contests={ voters.contests } />
+			<VoterElectionData election={ voters.election } />
+			<VoterContest contests={ voters.contests } />
+		</div>
+	)
 };
 
 export default VoterDetails;
