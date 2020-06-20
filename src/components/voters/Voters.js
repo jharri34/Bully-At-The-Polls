@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import BullyStore from '../shared/bullystore';
 import VoterDetails from './Voter-Details';
 import Table from 'react-bootstrap/Table';
@@ -36,7 +36,6 @@ function Voters(address) {
 					voters !== undefined &&
 					Object.keys(voters).length !== 0
 				) {
-					console.log(voters['contests']);
 					return (
 						<Table striped bordered hover>
 							<VoterDetails voters={voters} />

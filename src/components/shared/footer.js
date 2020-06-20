@@ -13,7 +13,9 @@ function Footer() {
 
 	return (
 		<div className="footer">
-			<a onClick={handleOnClick}>Footer</a>
+			
+			<a href="#" onClick={handleOnClick}>Footer</a>
+			
 		</div>
 	);
 }

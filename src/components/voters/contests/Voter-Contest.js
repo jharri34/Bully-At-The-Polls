@@ -1,14 +1,13 @@
 import React from 'react';
-import BullySpinner from '../shared/bullyspinner';
+import VoterContestDetails from './Voter-Contest-Details';
 function VoterContest({ contests }) {
-
-    console.log(contests)
+  
     return (
         <div>Contests
             {contests.map(contest => (
-                <div>{ contest.type }</div>
-            
+              <VoterContestDetails contest={contest}/>
             )) }
+
     </div>
     
     
