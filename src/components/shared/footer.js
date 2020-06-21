@@ -1,6 +1,8 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 
+import './header.css'
+
 function Footer() {
 	
 	let history = useHistory();
@@ -13,8 +15,8 @@ function Footer() {
 
 	return (
 		<div className="footer">
-			
-			<a href="#" onClick={handleOnClick}>Footer</a>
+			<div>Footer</div>
+			<a href="#" onClick={handleOnClick}></a>
 			
 		</div>
 	);
