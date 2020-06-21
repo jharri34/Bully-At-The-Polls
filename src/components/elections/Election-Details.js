@@ -1,19 +1,20 @@
 import React from 'react';
-import Table from 'react-bootstrap/Table';
+// import Table from 'react-bootstrap/Table';
+
+import './election.css'
 
 const ElectionDetails = ({ elections }) => {
 	return (
-		<div>
-		<Table striped bordered hover >
+		<div className='election-wrapper'>
 			{elections.map((election,item) => (
-			<tr>
-				<td>{election.id}</td>
-				<td>{election.name}</td>
-				<td>{election.electionDay}</td>
-				<td>{election.ocdDivisionId}</td>
-			</tr>
+			<div className='election-item-wrapper'>
+				{/* <div>{election.id}</div> */}
+				<div className='name'>{election.name}</div>
+				<div className='date'>{election.electionDay}</div>
+				{/* <div>{election.ocdDivisionId}</div> */}
+			</div>
 			))}
-		</Table>
+		
 		</div>
 	);
 };
