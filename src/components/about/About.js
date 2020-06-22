@@ -10,6 +10,7 @@ function About() {
 
 	return (
         <div class='about'>
+           
             <div>About Us</div>
             <div>This is a tool for looking up who your elected representatives are, upcoming elections, and histrically infomation about these representatives across the United States. Based on your address, we can find all the federal, state, county and local officials, elections, polling location,officals who represent you in government. <br />
 			Knowing who these representatives are and contacting their offices directly is the most effective way to change how our government work. <br />

@@ -18,11 +18,28 @@
 
 .footer-info-wrapper{
     display: flex; 
-    /* flex-direction: column; */
-    width: 40%;
-    margin: 0 auto;
+    flex-direction: row;
+    /* width: 40%; */
+    /* margin: 0 auto; */
     padding: 10px 10px;
-    border-right: 2px solid gray;
+    /* border-right: 2px solid gray; */
+}
+
+.footer-title{
+    display: flex;
+    width: 30%;
+    margin: 20px 20px;
+    padding: 20px 20px;
+    border-right: 2px solid;
+}
+
+.footer-about{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 10px 10px;
+    padding: 5px 10px;
+    border-right: 2px solid;
 }
 
 
