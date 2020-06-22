@@ -1,0 +1,44 @@
+.election-container{
+    display: flex;
+    /* flex-direction: row-reverse; */
+   
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 90px 8px;
+    padding: 20px 20px;
+    position: inherit;
+    /* height: 190px; */
+    /* left: 95px; */
+    top: 115px;
+}
+
+.election-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+
+}
+
+.election-item-wrapper{
+    border: 3px solid;
+    /* width: 100%; */
+    padding: 20px 20px;
+    width: 320px;
+    height: 200px;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.election-item-wrapper .name{
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.election-item-wrapper .date{
+    font-size: 20px;
+}
