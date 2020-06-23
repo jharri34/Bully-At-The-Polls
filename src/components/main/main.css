@@ -11,9 +11,12 @@
 } 
 
 .main img{
-    height: 240px;
     margin-bottom: 20px;
-    object-fit: none;
+    object-fit: cover;
+    height: 340px;
+    /* top: -5px; */
+    position: relative;
+    bottom: 24px;
 }
 
 .main-form{
@@ -31,5 +34,10 @@
 .main-form input{
     text-align: center;
     background-color: lightgray;
+}
+
+.main-form input:hover{
+    background-color: #007bff;
+    color: white;
 }
 
