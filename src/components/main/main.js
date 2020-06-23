@@ -38,6 +38,9 @@ function Main() {
 	};
 
 	const handleSubmit = (e) => {
+		if (e.target.value == null|| e.target.value === ""){
+			setAddress("");
+		}
 		e.preventDefault();
 		setAddress(e.target.value);
 		handleAddress(address);
@@ -45,6 +48,9 @@ function Main() {
 
 	const handleKeyPress = (e) => {
 		if (e.key === 'Enter') {
+			if (e.target.value == null|| e.target.value === ""){
+				setAddress("");
+			}
 			setAddress(e.target.value);
 			handleAddress(address);
 		}
