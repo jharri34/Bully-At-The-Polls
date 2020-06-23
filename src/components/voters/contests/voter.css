@@ -1,0 +1,32 @@
+.voter-detail-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* margin: 20px 50px; */
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    background: lightgray;
+}
+
+.voter-state-container{
+    border: 2px solid;
+    padding: 10px 10px;
+    margin: 0 20px;
+    background: black;
+    color: white;
+    line-height: 25px;
+    width: 40%;
+}
+
+.voter-election-container{
+    border: 2px solid;
+    padding: 10px 10px;
+    margin: 0 20px;
+    background: black;
+    color: white;
+    line-height: 25px;
+    width: 40%;
+}
+

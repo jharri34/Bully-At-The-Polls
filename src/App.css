@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  /* for sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-logo {

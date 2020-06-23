@@ -2,8 +2,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.about-text{
+    display: flex; 
+    margin: 30px;
+    padding: 0px 30px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+}
+
+.about-title{
+    font-size: 30px;
+    background: blue;
+    width: 100%;
+    color: white;
+    
 }

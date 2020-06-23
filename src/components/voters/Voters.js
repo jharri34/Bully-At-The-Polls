@@ -37,9 +37,9 @@ function Voters(address) {
 					Object.keys(voters).length !== 0
 				) {
 					return (
-						<Table striped bordered hover>
+						<div>
 							<VoterDetails voters={voters} />
-						</Table>
+						</div>
 					);
 				} else {
 					return (
