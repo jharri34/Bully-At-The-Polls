@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Elections from '../elections/Elections';
 import Voters from '../voters/Voters';
 import Form from 'react-bootstrap/Form';
+import ParseAddress from 'parse-address'
 
 import './main.css';
 function Main() {
@@ -9,15 +10,28 @@ function Main() {
 	const [ showVoter, setShowVoter ] = useState(false);
 	const [ address, setAddress ] = useState('');
 
+	
 	const isValidAddress = (address) => {
+		console.log('isValidAddress')
 		if (address !== null || address !== '') {
 			//Validate address here
-			return true;
+			
+			return validateAddress(address)
 		}
+		return false;
 	};
+	const validateAddress = (address) =>{
+		let validKeys = ["number", "street", "type", "city", "state", "zip"]
+		let validAddress = ParseAddress.parseLocation(address)
+		console.log(Object.keys(validAddress))
+		if(JSON.stringify(validKeys) === JSON.stringify(Object.keys(validAddress))){
+			return true
+		}
+		
 
+	}
 	const handleAddress = () => {
-		if (isValidAddress) {
+		if (isValidAddress(address)) {
 			setShowElection(true);
 			setShowVoter(true);
 		}
@@ -51,7 +65,7 @@ function Main() {
 						type="text"
 						value={address || ''}
 						onChange={(e) => handleChange(e)}
-						placeholder="123 Test Address"
+						placeholder="123 Test Address City, Zip Code"
 					/>
 				</Form>
 
