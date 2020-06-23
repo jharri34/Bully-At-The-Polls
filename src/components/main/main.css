@@ -7,29 +7,21 @@
     /* height: 545px; */
     flex-direction: column;
     width: 100%; 
-
+    /* padding-bottom: 30px; */
 } 
 
-/* .main-image{
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0.8;
-} */
+.main img{
+    height: 240px;
+    margin-bottom: 20px;
+    object-fit: none;
+}
 
 .main-form{
     display: flex;
     justify-content: center;
     align-items: flex-end;
     width: 100%;
-    /* background-image: url(https://images.unsplash.com/photo-1571609549239-bf07fb79f702?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80); 
-    background-repeat: no-repeat;
-    /* max-height: 100%; */
-    /* background-size: cover;
-    background-position: center;
-    height: 325px; */
+   
 } 
 
 .main-form form{
