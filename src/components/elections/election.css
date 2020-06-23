@@ -11,6 +11,8 @@
     /* height: 190px; */
     /* left: 95px; */
     top: 115px;
+    border-bottom: 3px solid;
+
 }
 
 .election-wrapper{
@@ -32,6 +34,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.election-item-wrapper:hover{
+    background-color: blue;
 }
 
 .election-item-wrapper .name{
