@@ -1,8 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-// import './header.css'
+
 
 function Header() {
 	let history = useHistory();
