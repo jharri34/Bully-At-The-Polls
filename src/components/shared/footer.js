@@ -17,7 +17,7 @@ function Footer() {
 		<footer className="footer">
 			<div className='footer-info-wrapper'>
 				<div className='footer-title'>
-					<div>BULLY AT THE POLL</div>
+					<div>BULLY AT THE POLLS</div>
 				</div>
 				<Link to='/about'>About Us</Link>
 				{/* <div className='footer-about'>

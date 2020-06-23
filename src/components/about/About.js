@@ -7,7 +7,6 @@ function About() {
 	let history = useHistory();
 
 	
-
 	return (
 		<div class='about'>
 			
