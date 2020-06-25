@@ -1,8 +1,8 @@
 import React from 'react';
 function VoterReferendumDetails({ contest }) {
 	return (
-		<div>
-			<div>{contest.type}</div>
+		<div className='green-column'>
+			{/* <div>{contest.type}</div>
 			<div>{contest.referendumTitle}</div>
 			<div>{contest.referendumUrl}</div>
 			<div>
@@ -17,7 +17,7 @@ function VoterReferendumDetails({ contest }) {
 						<div>{source.official}</div>
 					</React.Fragment>
 				))}
-			</div>
+			</div> */}
 		</div>
 	);
 }

@@ -1,19 +1,18 @@
 import React from 'react';
-import Table from 'react-bootstrap/Table';
 
+import './voter.css'
 function VoterCandidates({ candidate }) {
 	return (
-		<div>
-		<Table striped bordered hover >
+		<div className='candidate-container'>
 			{candidate.candidates.map((candid,item) => (
-			<tr>
-				<td>{candid.name}</td>
-				<td>{candid.party}</td>
-				<td>{candid.candidateUrl}</td>
-				<td>{candid.phone}</td>
-			</tr>
+			<div>
+				<div>{candid.name}</div>
+				<div>{candid.party}</div>
+				<div>{candid.candidateUrl}</div>
+				<div>{candid.phone}</div>
+			</div>
 			))}
-		</Table>
+
 		</div>
 	);
 }

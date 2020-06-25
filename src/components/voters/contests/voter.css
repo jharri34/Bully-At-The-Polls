@@ -30,3 +30,60 @@
     width: 40%;
 }
 
+.candidate-container{
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contest-details-container{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.nonreferendum-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 60px;
+    border: 2px solid;
+    
+}
+
+ /* .contest-wrapper{
+    margin: 15px;
+    background-color: lightcoral;
+} */
+
+/* .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+} */
+  
+/* .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+} */
+
+/* .blue-column{
+    background-color: blue;
+    height: 100px;
+    width: 50%;
+} */
+
+/* .green-column{
+    background-color: green;
+    height: 100px;
+}  */

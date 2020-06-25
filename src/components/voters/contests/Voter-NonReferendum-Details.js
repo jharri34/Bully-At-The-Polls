@@ -2,9 +2,9 @@ import React from 'react';
 import VoterCandidates from './Voter-Candidates';
 
 function VoterNonReferendumDetails({ contest }) {
-
+console.log(contest)
 	return (
-		<div>
+		<div className='nonreferendum-container'>
 			<div>{contest.type}</div>
 			<div>{contest.office}</div>
 			<div> {contest.roles.map((role, item) => <div>{role}</div>)}</div>
@@ -17,7 +17,7 @@ function VoterNonReferendumDetails({ contest }) {
 
 			{<VoterCandidates candidate={contest} />}
 
-			<div>
+			{/* <div>
 				<div>
 					{contest.sources.map((source, item) => (
 						<React.Fragment>
@@ -26,7 +26,7 @@ function VoterNonReferendumDetails({ contest }) {
 						</React.Fragment>
 					))}
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 }

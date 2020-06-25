@@ -4,6 +4,7 @@ import Voters from '../voters/Voters';
 import Form from 'react-bootstrap/Form';
 
 import './main.css';
+
 function Main() {
 	const [ showElection, setShowElection ] = useState(false);
 	const [ showVoter, setShowVoter ] = useState(false);
