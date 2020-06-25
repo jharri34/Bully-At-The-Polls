@@ -4,6 +4,7 @@ import Voters from '../voters/Voters';
 import ParseAddress from 'parse-address'
 import { useForm,ErrorMessage  } from "react-hook-form";
 import './main.css';
+
 function Main() {
 	const [ showElection, setShowElection ] = useState(false);
 	const [ showVoter, setShowVoter ] = useState(false);
