@@ -6,14 +6,14 @@ function VoterNonReferendumDetails({ contest }) {
 	return (
 		<div className='nonreferendum-container'>
 			<div className='nonreferendum-items'>
-				<div>{ contest.type }</div>
+				{/* <div>{ contest.type }</div> */}
 				<div>{ contest.office }</div>
-				<div> { contest.roles.map((role, item) => <div>{ role }</div>) }</div>
-				<div> { contest.level.map((levels, item) => <div>{ levels }</div>) }</div>
+				{/* <div> { contest.roles.map((role, item) => <div>{ role }</div>) }</div>
+				<div> { contest.level.map((levels, item) => <div>{ levels }</div>) }</div> */}
 				<div>
 					<div>{ contest.district.name }</div>
 					<div>{ contest.district.scope }</div>
-					<div>{ contest.district.id }</div>
+					{/* <div>{ contest.district.id }</div> */}
 				</div>
 			</div>
 			{ <VoterCandidates candidate={ contest } /> }
