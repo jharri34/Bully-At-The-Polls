@@ -8,8 +8,7 @@ function VoterCandidates({ candidate }) {
 				<div className='candidate-item-wrapper'>
 					<div>{ candid.name }</div>
 					<div>{ candid.party }</div>
-						<div>{ candid.candidateUrl }</div>
-					
+					<div>{ candid.candidateUrl }</div>
 					<div>{ candid.phone }</div>
 				</div>
 			)) }
