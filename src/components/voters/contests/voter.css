@@ -42,8 +42,9 @@
 .candidate-item-wrapper{
     border: 2px solid #007bff;
     margin: 10px 10px;
-    width: 240px;
+    width: 280px;
     height: 170px;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,7 +54,7 @@
 }
 .contest-details-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     /* padding: 20px;
     align-items: center;
     justify-content: center; */
@@ -73,4 +74,16 @@
 
 .nonreferendum-items{
     border-bottom: 3px solid;
+    line-height: 35px;
+    text-align: justify;
+    word-break: break-all;
+}
+
+.contest-office{
+    font-size: 30px;
+}
+
+.contest-district-items{
+    font-style: italic;
+    font-size: 18px;
 }
