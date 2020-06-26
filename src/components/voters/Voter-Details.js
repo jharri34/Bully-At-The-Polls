@@ -13,9 +13,9 @@ const VoterDetails = ({ voters }) => {
 				<div className='voter-state-container'>
 					<VoterState voterstate={ voters.state } />
 				</div>
-				<div className='voter-election-container'>
+				{/* <div className='voter-election-container'>
 					<VoterElectionData election={ voters.election } />
-				</div>
+				</div> */}
 			</div>
 			<VoterContest contests={ voters.contests } />
 		</div>
