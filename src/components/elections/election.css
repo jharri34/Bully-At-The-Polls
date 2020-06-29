@@ -37,7 +37,7 @@
 }
 
 .election-item-wrapper:hover{
-    background-color: blue;
+    background-color: #007bff;
 }
 
 .election-item-wrapper .name{

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import Elections from '../elections/Elections';
 import Voters from '../voters/Voters';
-import Form from 'react-bootstrap/Form';
 import ParseAddress from 'parse-address'
-
+import { useForm,ErrorMessage  } from "react-hook-form";
 import './main.css';
+
 function Main() {
 	const [ showElection, setShowElection ] = useState(false);
 	const [ showVoter, setShowVoter ] = useState(false);
 	const [ address, setAddress ] = useState('');
-
+	const { register, handleSubmit, errors, setError, clearError } = useForm();
 	
 	const isValidAddress = (address) => {
-		console.log('isValidAddress')
+	
 		if (address !== null || address !== '') {
 			//Validate address here
 			
@@ -23,10 +23,12 @@ function Main() {
 	const validateAddress = (address) =>{
 		let validKeys = ["number", "street", "type", "city", "state", "zip"]
 		let validAddress = ParseAddress.parseLocation(address)
-		console.log(Object.keys(validAddress))
+
 		if(JSON.stringify(validKeys) === JSON.stringify(Object.keys(validAddress))){
 			return true
 		}
+		setError("address", "notMatch", "Please Enter a Valid Address");
+		return false;
 		
 
 	}
@@ -34,27 +36,23 @@ function Main() {
 		if (isValidAddress(address)) {
 			setShowElection(true);
 			setShowVoter(true);
+			return
 		}
+		setShowElection(false)
+		setShowVoter(false)
 	};
 
-	const handleSubmit = (e) => {
-		if (e.target.value == null|| e.target.value === ""){
+	const onSubmit = (data, e) => {
+
+		if (data == null|| data === ""){
 			setAddress("");
 		}
+
 		e.preventDefault();
 		setAddress(e.target.value);
 		handleAddress(address);
 	};
 
-	const handleKeyPress = (e) => {
-		if (e.key === 'Enter') {
-			if (e.target.value == null|| e.target.value === ""){
-				setAddress("");
-			}
-			setAddress(e.target.value);
-			handleAddress(address);
-		}
-	};
 
 	const handleChange = (e) => {
 		setAddress(e.target.value);
@@ -67,16 +65,20 @@ function Main() {
 				alt='polling station poster on bench' />
 			
 			<div className="main-form">
-				<Form
-					onSubmit={ (e) => handleSubmit(e) }
-					onKeyPress={ (e) => handleKeyPress(e) }>
-					<Form.Control
+				<form
+					onSubmit={handleSubmit(onSubmit)}>
+					<div>
+					<ErrorMessage errors={errors} name="address" />
+					</div>
+					<input
 						type="text"
 						value={address || ''}
 						onChange={(e) => handleChange(e)}
 						placeholder="123 Test Address City, Zip Code"
+						name="address"
+						ref={register}
 					/>
-				</Form>
+				</form>
 
 				
 			

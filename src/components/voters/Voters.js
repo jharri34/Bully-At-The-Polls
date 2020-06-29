@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import BullyStore from '../shared/bullystore';
 import VoterDetails from './Voter-Details';
-import Table from 'react-bootstrap/Table';
 import BullySpinner from '../shared/bullyspinner';
 
 function Voters(address) {

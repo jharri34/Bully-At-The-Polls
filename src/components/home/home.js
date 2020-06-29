@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+
 
 import './home.css';
 
@@ -18,7 +18,7 @@ function Home() {
 				to speak up, and to stand with those who support us and each other." <br />
 				- Loung Ung
 			</h1>
-			<Button onClick={handleOnClick}>Locate Election</Button>
+			<button onClick={handleOnClick}>Locate Election</button>
 		</div>
 	);
 }
