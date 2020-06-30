@@ -8,13 +8,17 @@ import './voter.css'
 function VoterContestDetails({ contest }) {
 	const showContest = (contest) => {
 		if (contest.type !== config.REFERENDUM) {
-			return <VoterNonReferendumDetails
+			return <div>
+				<VoterNonReferendumDetails
 				contest={ contest }
-			/>;
+				/>
+			</div>;
 		} else if (contest.type === config.REFERENDUM) {
-			return <VoterReferendumDetails
+			return <div className='referendum'>
+				<VoterReferendumDetails
 				contest={ contest }
-			/>;
+				/>
+			</div>;
 		}
 	};
 
