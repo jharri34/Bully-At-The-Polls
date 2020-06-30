@@ -23,10 +23,8 @@ function VoterContestDetails({ contest }) {
 	};
 
 	return (
-		<div className='soemsuff'>
-
+		<div>
 			{ showContest(contest) }
-
 		</div>
 	);
 }

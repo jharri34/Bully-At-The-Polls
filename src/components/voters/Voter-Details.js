@@ -13,10 +13,6 @@ const VoterDetails = ({ voters }) => {
 				<div className='voter-state-container'>
 					<VoterState voterstate={ voters.state } />
 				</div>
-				{/* playing with look in UI without election data component */ }
-				{/* <div className='voter-election-container'>
-					<VoterElectionData election={ voters.election } />
-				</div> */}
 			</div>
 			<VoterContest contests={ voters.contests } />
 		</div>
