@@ -26,6 +26,13 @@
 .home button{
     font-size: 20px;
     margin-top: 40px;
+    background-color:#007bff;
+    height: 10%;
+    width: 15%;
+    color: white;
+    font-size: 27px;
+    border-radius: 10px;
+    border-color: #007bff;
 }
 
 .home button:hover{

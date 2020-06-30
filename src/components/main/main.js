@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Elections from '../elections/Elections';
 import Voters from '../voters/Voters';
 import ParseAddress from 'parse-address'
-import { useForm,ErrorMessage  } from "react-hook-form";
+import { useForm, ErrorMessage } from "react-hook-form";
+
 import './main.css';
 
 function Main() {
