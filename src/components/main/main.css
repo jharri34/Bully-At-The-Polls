@@ -34,7 +34,7 @@
 .main-form input{
     text-align: center;
     background-color: lightgray;
-    width: 65%;
+    /* width: 65%; */
 }
 
 .main-form input:hover{
