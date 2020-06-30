@@ -88,3 +88,39 @@
     font-style: italic;
     font-size: 18px;
 }
+
+.referendum{
+    display: flex;
+    border: 2px solid;
+    flex-direction: row;
+    width: 800px;
+    height: 200px;
+    word-break: break-all;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 40px;;
+}
+
+.referendum-container{
+    /* display: flex; */
+    /* border: 2px solid; */
+    font-size: 22px;
+}
+
+.referendum-container .type{
+    font-size: 25px;
+    text-transform: uppercase;
+}
+.referendum-container .title{
+    font-size: 28px;
+    font-style: italic;
+}
+
+.referendum-container .url{
+    font-size: 18px;
+}
+
+.soemsuff{
+    margin: 0 auto;
+}

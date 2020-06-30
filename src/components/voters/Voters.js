@@ -28,7 +28,7 @@ function Voters(address) {
 
 	return (
 		<div>
-			{(() => {
+			{ (() => {
 				if (
 					voterIsLoading === true &&
 					voterIsLoading !== undefined &&
@@ -37,7 +37,7 @@ function Voters(address) {
 				) {
 					return (
 						<div>
-							<VoterDetails voters={voters} />
+							<VoterDetails voters={ voters } />
 						</div>
 					);
 				} else {
@@ -47,7 +47,7 @@ function Voters(address) {
 						</div>
 					);
 				}
-			})()}
+			})() }
 		</div>
 	);
 }
