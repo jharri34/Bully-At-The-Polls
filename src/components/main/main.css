@@ -34,7 +34,11 @@
 .main-form input{
     text-align: center;
     background-color: lightgray;
-    /* width: 65%; */
+    width: 70%;
+    height: 40px;
+    /* border-radius: 10px;  */
+    color: black;
+    border: none;
 }
 
 .main-form input:hover{
