@@ -7,18 +7,21 @@ function VoterState({ voterstate }) {
 			<div>
 				{ voterstate.map((vstate, item) => (
 					<React.Fragment>
-						<div>{ vstate.name }</div>
-						<div>
+						{/* <div>{ vstate.name }</div> */ }
+						<div className='voter-state-name'>
 							<div>{ vstate.electionAdministrationBody.name }</div>
-							<div>{ vstate.electionAdministrationBody.electionInfoUrl }</div>
-							<div>{ vstate.electionAdministrationBody.ballotInfoUrl }</div>
 						</div>
-						<div>
+						<div className='voter-address'>
 							<div>{ vstate.electionAdministrationBody.correspondenceAddress.line1 }</div>
 							<div>{ vstate.electionAdministrationBody.correspondenceAddress.city }</div>
 							<div>{ vstate.electionAdministrationBody.correspondenceAddress.state }</div>
 							<div>{ vstate.electionAdministrationBody.correspondenceAddress.zip }</div>
 						</div>
+						<div className='voter-url'>
+							<div>{ vstate.electionAdministrationBody.electionInfoUrl }</div>
+							<div>{ vstate.electionAdministrationBody.ballotInfoUrl }</div>
+						</div>
+
 
 						<div>
 							{ vstate.sources.map((source, item) => (
