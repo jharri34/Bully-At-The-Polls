@@ -55,7 +55,7 @@ function Main() {
 						type="text"
 						value={address || ''}
 						onChange={(e) => handleChange(e)}
-						placeholder="123 Test Address"
+						placeholder="Enter Address"
 					/>
 				</Form>
 
