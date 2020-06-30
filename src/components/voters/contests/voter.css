@@ -99,7 +99,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 20px 40px;
+    margin: 15px 40px;
     background-color: lightgray;
 }
 
@@ -110,16 +110,18 @@
 }
 
 .referendum-container .type{
-    font-size: 25px;
+    font-size: 30px;
     text-transform: uppercase;
 }
 .referendum-container .title{
     font-size: 28px;
     font-style: italic;
+    color: #007bff;
 }
 
 .referendum-container .url{
     font-size: 18px;
+    opacity: 0.6;
 }
 
 .soemsuff{
