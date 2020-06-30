@@ -10,9 +10,9 @@ function VoterReferendumDetails({ contest }) {
 					</React.Fragment>
 				))}
 			</div> */}
-			<div>{ contest.type }</div>
-			<div>{ contest.referendumTitle }</div>
-			<div>{ contest.referendumUrl }</div>
+			<div className='type'>{ contest.type }</div>
+			<div className='title'>{ contest.referendumTitle }</div>
+			<div className='url'>{ contest.referendumUrl }</div>
 			{/* <div>
 				<div>{contest.district.name}</div>
 				<div>{contest.district.scope}</div>

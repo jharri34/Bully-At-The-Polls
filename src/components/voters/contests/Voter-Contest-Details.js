@@ -23,7 +23,7 @@ function VoterContestDetails({ contest }) {
 	};
 
 	return (
-		<div>
+		<div className='soemsuff'>
 
 			{ showContest(contest) }
 
