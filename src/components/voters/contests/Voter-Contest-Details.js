@@ -8,7 +8,7 @@ import './voter.css'
 function VoterContestDetails({ contest }) {
 	const showContest = (contest) => {
 		if (contest.type !== config.REFERENDUM) {
-			return <div>
+			return <div className='nonref'>
 				<VoterNonReferendumDetails
 				contest={ contest }
 				/>
