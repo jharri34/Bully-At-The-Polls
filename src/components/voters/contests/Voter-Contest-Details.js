@@ -10,13 +10,13 @@ function VoterContestDetails({ contest }) {
 		if (contest.type !== config.REFERENDUM) {
 			return <div className='nonref'>
 				<VoterNonReferendumDetails
-				contest={ contest }
+					contest={ contest }
 				/>
 			</div>;
 		} else if (contest.type === config.REFERENDUM) {
 			return <div className='referendum'>
 				<VoterReferendumDetails
-				contest={ contest }
+					contest={ contest }
 				/>
 			</div>;
 		}
@@ -24,9 +24,9 @@ function VoterContestDetails({ contest }) {
 
 	return (
 		<div>
-			
-		{ showContest(contest) }
-			
+
+			{ showContest(contest) }
+
 		</div>
 	);
 }

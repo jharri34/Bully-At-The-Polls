@@ -5,14 +5,14 @@ function VoterElectionData({ election }) {
     return (
 
         <div>
-         <React.Fragment>
-             <div>
-                 {election.name}
-             </div>
-             <div>
-                 {election.electionDay}
-             </div>
-         </React.Fragment>
+            <React.Fragment>
+                <div>
+                    { election.name }
+                </div>
+                <div>
+                    { election.electionDay }
+                </div>
+            </React.Fragment>
         </div>
     );
 }

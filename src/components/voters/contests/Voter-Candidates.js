@@ -11,7 +11,7 @@ function VoterCandidates({ candidate }) {
 					<div>{ candid.candidateUrl }</div>
 					<div>{ candid.phone }</div>
 					{/* map through channels array and print out social medial handle(type) and url(id)) */ }
-					{/* bug- map undefined */}
+					{/* bug- map undefined */ }
 					{/* <div>{ candid.channels.map((channel, item) =>
 						<div>
 							<div>{ channel.type }</div>
