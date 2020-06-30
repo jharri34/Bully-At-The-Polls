@@ -93,13 +93,14 @@
     display: flex;
     border: 2px solid;
     flex-direction: row;
-    width: 800px;
+    /* width: 800px; */
     height: 200px;
     word-break: break-all;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 20px 40px;;
+    margin: 20px 40px;
+    background-color: lightgray;
 }
 
 .referendum-container{
@@ -122,5 +123,5 @@
 }
 
 .soemsuff{
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
