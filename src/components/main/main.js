@@ -3,15 +3,27 @@ import Elections from '../elections/Elections';
 import Voters from '../voters/Voters';
 import ParseAddress from 'parse-address'
 import { useForm, ErrorMessage } from "react-hook-form";
-
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 import './main.css';
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+	  '& .MuiTextField-root': {
+		margin: theme.spacing(1),
+		width: '25ch',
+	  },
+	},
+  }));
+
 
 function Main() {
 	const [ showElection, setShowElection ] = useState(false);
 	const [ showVoter, setShowVoter ] = useState(false);
 	const [ address, setAddress ] = useState('');
 	const { register, handleSubmit, errors, setError, clearError } = useForm();
-	
+	const classes = useStyles();
+
 	const isValidAddress = (address) => {
 	
 		if (address !== null || address !== '') {
@@ -59,24 +71,32 @@ function Main() {
 		setAddress(e.target.value);
 	};
 
+
 	return (
 		<div className="main">
 			<img
 				src='https://images.unsplash.com/photo-1571609549239-bf07fb79f702?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80'	
 				alt='polling station poster on bench' />
 			
-			<div className="main-form">
+			<div noValidate autoComplete="off" className="main-form">
 				<form
 					onSubmit={handleSubmit(onSubmit)}>
 					<div>
 					<ErrorMessage errors={errors} name="address" />
 					</div>
-					<input
-						type="text"
+
+					<TextField required id="standard-required"
+						 label="Required"
 						value={address || ''}
 						onChange={(e) => handleChange(e)}
+						fullWidth
+						margin="normal"
+						style={{ margin: 8 }}
 						placeholder="123 Test Address City, Zip Code"
 						name="address"
+						InputLabelProps={{
+							shrink: true,
+						  }}
 						ref={register}
 					/>
 				</form>
