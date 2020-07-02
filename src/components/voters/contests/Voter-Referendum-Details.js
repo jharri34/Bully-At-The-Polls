@@ -1,10 +1,20 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Link from '@material-ui/core/Link';
+
+const useStyles = makeStyles((theme) => ({
+	root: {
+		'& > * + *': {
+			marginLeft: theme.spacing(2)
+		}
+	}
+}));
 
 const Accordion = withStyles({
 	root: {
@@ -49,14 +59,15 @@ const AccordionDetails = withStyles((theme) => ({
 
 function VoterReferendumDetails({ contest }) {
 	const [ expanded, setExpanded ] = React.useState('false');
-
+	const classes = useStyles();
+	const preventDefault = (event) => event.preventDefault();
 	const handleChange = (panel) => (event, newExpanded) => {
 		setExpanded(newExpanded ? panel : false);
 	};
 
 	return (
 		<div className="referendum-container">
-			<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1') }>
+			<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
 				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
 					<Typography>
 						<div className="title">{contest.referendumTitle}</div>
@@ -64,7 +75,7 @@ function VoterReferendumDetails({ contest }) {
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						<div className="url">{contest.referendumUrl}</div>
+						<Link className="url" href={contest.referendumUrl} >{contest.referendumUrl}</Link>
 					</Typography>
 				</AccordionDetails>
 			</Accordion>

@@ -5,13 +5,20 @@ import ParseAddress from 'parse-address'
 import { useForm, ErrorMessage } from "react-hook-form";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import './main.css';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
+		flexGrow: 1,
 	  '& .MuiTextField-root': {
 		margin: theme.spacing(1),
 		width: '25ch',
+	  }, paper: {
+		padding: theme.spacing(2),
+		textAlign: 'center',
+		color: theme.palette.text.secondary,
 	  },
 	},
   }));
