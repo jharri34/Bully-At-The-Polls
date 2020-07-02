@@ -104,11 +104,11 @@
     font-size: 18px;
 }
 
-.referendum{
+/* .referendum{
     display: flex;
     border: 2px solid;
     flex-direction: row;
-    /* width: 800px; */
+    width: 800px; 
     height: 200px;
     word-break: break-all;
     flex-wrap: wrap;
@@ -116,11 +116,12 @@
     justify-content: center;
     margin: 15px 40px;
     background-color: lightgray;
-}
+} */
 
 .referendum-container{
     /* display: flex; */
     /* border: 2px solid; */
+    margin: 30px 50px;
     font-size: 22px;
 }
 

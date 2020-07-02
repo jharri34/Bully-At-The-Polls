@@ -5,6 +5,7 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const Accordion = withStyles({
 	root: {
@@ -48,7 +49,7 @@ const AccordionDetails = withStyles((theme) => ({
 }))(MuiAccordionDetails);
 
 function VoterNonReferendumDetails({ contest }) {
-	const [ expanded, setExpanded ] = React.useState('panel1');
+	const [ expanded, setExpanded ] = React.useState('false');
 
 	const handleChange = (panel) => (event, newExpanded) => {
 		setExpanded(newExpanded ? panel : false);
@@ -57,7 +58,7 @@ function VoterNonReferendumDetails({ contest }) {
 	return (
 		<div className="nonreferendum-container">
 			<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
 					<Typography>
 						{' '}
 						<div className="nonreferendum-items">
