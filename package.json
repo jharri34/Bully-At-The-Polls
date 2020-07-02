@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "react-scripts build"
-},
+  },
   "engines": {
     "node": "~6.10.3",
     "npm": "~5.6.0"
@@ -42,5 +42,4 @@
       "last 1 safari version"
     ]
   }
-
 }
