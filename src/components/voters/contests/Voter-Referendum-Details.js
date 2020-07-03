@@ -76,7 +76,7 @@ function VoterReferendumDetails({ contest }) {
 				justify="flex-start"
 				alignItems="center">
 
-				<Grid item xs={ 5 }>
+				<Grid xs={6}>
 
 					<Accordion
 						square expanded={ expanded === 'panel1' }
