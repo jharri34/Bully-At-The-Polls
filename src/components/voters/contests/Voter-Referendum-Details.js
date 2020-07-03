@@ -7,6 +7,7 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Link from '@material-ui/core/Link';
+import { Grid } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -58,7 +59,7 @@ const AccordionDetails = withStyles((theme) => ({
 }))(MuiAccordionDetails);
 
 function VoterReferendumDetails({ contest }) {
-	const [ expanded, setExpanded ] = React.useState('false');
+	const [expanded, setExpanded] = React.useState('false');
 	const classes = useStyles();
 	const preventDefault = (event) => event.preventDefault();
 	const handleChange = (panel) => (event, newExpanded) => {
@@ -67,18 +68,38 @@ function VoterReferendumDetails({ contest }) {
 
 	return (
 		<div className="referendum-container">
-			<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
-					<Typography>
-						<div className="title">{contest.referendumTitle}</div>
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						<Link className="url" href={contest.referendumUrl} >{contest.referendumUrl}</Link>
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
+
+			<Grid
+				container
+				spacing={ 2 }
+				direction="row"
+				justify="flex-start"
+				alignItems="center">
+
+				<Grid item xs={ 5 }>
+
+					<Accordion
+						square expanded={ expanded === 'panel1' }
+						onChange={ handleChange('panel1') }>
+
+						<AccordionSummary
+							aria-controls="panel1d-content"
+							id="panel1d-header"
+							expandIcon={ <ExpandMoreIcon /> }>
+							<Typography>
+								<div className="title">{ contest.referendumTitle }</div>
+							</Typography>
+						</AccordionSummary>
+
+						<AccordionDetails>
+							<Typography>
+								<Link className="url" href={ contest.referendumUrl } >{ contest.referendumUrl }</Link>
+							</Typography>
+						</AccordionDetails>
+					</Accordion>
+
+				</Grid>
+			</Grid>
 		</div>
 	);
 }
