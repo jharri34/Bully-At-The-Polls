@@ -7,10 +7,16 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Link from '@material-ui/core/Link';
-import { Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
+		flexGrow: 1,
+		paper: {
+			height: 140,
+			width: 100
+		},
 		'& > * + *': {
 			marginLeft: theme.spacing(2)
 		}
@@ -39,9 +45,9 @@ const AccordionSummary = withStyles({
 		backgroundColor: 'rgba(0, 0, 0, .03)',
 		borderBottom: '1px solid rgba(0, 0, 0, .125)',
 		marginBottom: -1,
-		minHeight: 56,
+		minHeight: '100%',
 		'&$expanded': {
-			minHeight: 56
+			minHeight: '100%'
 		}
 	},
 	content: {
@@ -59,7 +65,7 @@ const AccordionDetails = withStyles((theme) => ({
 }))(MuiAccordionDetails);
 
 function VoterReferendumDetails({ contest }) {
-	const [expanded, setExpanded] = React.useState('false');
+	const [ expanded, setExpanded ] = React.useState('false');
 	const classes = useStyles();
 	const preventDefault = (event) => event.preventDefault();
 	const handleChange = (panel) => (event, newExpanded) => {
@@ -67,38 +73,38 @@ function VoterReferendumDetails({ contest }) {
 	};
 
 	return (
-		<div className="referendum-container">
-
+		<div>
 			<Grid
 				container
-				spacing={ 2 }
+				className={classes.root}
+				spacing={2}
 				direction="row"
 				justify="flex-start"
-				alignItems="center">
+				alignItems="center"
+			>
+				<Paper>
+					<Grid item>
+						<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+							<AccordionSummary
+								aria-controls="panel1d-content"
+								id="panel1d-header"
+								expandIcon={<ExpandMoreIcon />}
+							>
+								<Typography>
+									<div className="title">{contest.referendumTitle}</div>
+								</Typography>
+							</AccordionSummary>
 
-				<Grid xs={6}>
-
-					<Accordion
-						square expanded={ expanded === 'panel1' }
-						onChange={ handleChange('panel1') }>
-
-						<AccordionSummary
-							aria-controls="panel1d-content"
-							id="panel1d-header"
-							expandIcon={ <ExpandMoreIcon /> }>
-							<Typography>
-								<div className="title">{ contest.referendumTitle }</div>
-							</Typography>
-						</AccordionSummary>
-
-						<AccordionDetails>
-							<Typography>
-								<Link className="url" href={ contest.referendumUrl } >{ contest.referendumUrl }</Link>
-							</Typography>
-						</AccordionDetails>
-					</Accordion>
-
-				</Grid>
+							<AccordionDetails>
+								<Typography>
+									<Link className="url" href={contest.referendumUrl} target="_blank" rel="noopener">
+										{contest.referendumUrl}
+									</Link>
+								</Typography>
+							</AccordionDetails>
+						</Accordion>
+					</Grid>
+				</Paper>
 			</Grid>
 		</div>
 	);
