@@ -26,10 +26,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Main() {
-	
+	const { showVoter } = useStoreState((state) => ({
+		showVoter: state.showVoter
+	}));
 	const setAddress = useStoreActions((actions) => actions.setAddress);
 	const [ showElection, setShowElection ] = useState(false);
-	const [ showVoter, setShowVoter ] = useState(false);
 	const [ mainAddress, setMainAddress ] = useState('');
 	const { register, handleSubmit, errors, setError, clearError } = useForm();
 	const classes = useStyles();
@@ -59,11 +60,9 @@ function Main() {
 		if (isValidAddress(mainAddress)) {
 			setAddress(mainAddress)
 			setShowElection(true);
-			setShowVoter(true);
 			return
 		}
 		setShowElection(false)
-		setShowVoter(false)
 	};
 
 	const onSubmit = (data, e) => {
