@@ -10,7 +10,8 @@ const BullyStore = createStore({
 	electionError: '',
     electionIsLoading: false,
     voterError: '',
-    voterIsLoading:false,
+	voterIsLoading:false,
+	currentVoterSelection: {},
 	
 
     /*actions thunk side effects*/
@@ -50,6 +51,10 @@ const BullyStore = createStore({
     setElectionError: action((state, error) => {
 		state.electionError = error.message;
 		alert(error.message);
+	}),
+	setCurrentVoterSelection: action((state,currentVoterSelection) =>{
+		state.currentVoterSelection = currentVoterSelection
+	
 	}),
 	setElectionIds: action((state,electionId) =>{
 		state.electionIds = {...state.electionIds,electionId}	
