@@ -6,7 +6,6 @@ import VoterElectionData from './Voter-ElectionData'
 import './contests/voter.css'
 
 const VoterDetails = ({ voters }) => {
-
 	return (
 		<div>
 			<div className='voter-detail-container'>

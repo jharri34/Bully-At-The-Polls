@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import './main.css';
+import { useStoreActions, useStoreState } from 'easy-peasy';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -25,24 +26,26 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Main() {
+	
+	const setAddress = useStoreActions((actions) => actions.setAddress);
 	const [ showElection, setShowElection ] = useState(false);
 	const [ showVoter, setShowVoter ] = useState(false);
-	const [ address, setAddress ] = useState('');
+	const [ mainAddress, setMainAddress ] = useState('');
 	const { register, handleSubmit, errors, setError, clearError } = useForm();
 	const classes = useStyles();
 
-	const isValidAddress = (address) => {
+	const isValidAddress = (mainAddress) => {
 	
-		if (address !== null || address !== '') {
+		if (mainAddress !== null || mainAddress !== '') {
 			//Validate address here
 			
-			return validateAddress(address)
+			return validateAddress(mainAddress)
 		}
 		return false;
 	};
-	const validateAddress = (address) =>{
+	const validateAddress = (mainAddress) =>{
 		let validKeys = ["number", "street", "type", "city", "state", "zip"]
-		let validAddress = ParseAddress.parseLocation(address)
+		let validAddress = ParseAddress.parseLocation(mainAddress)
 
 		if(JSON.stringify(validKeys) === JSON.stringify(Object.keys(validAddress))){
 			return true
@@ -53,7 +56,8 @@ function Main() {
 
 	}
 	const handleAddress = () => {
-		if (isValidAddress(address)) {
+		if (isValidAddress(mainAddress)) {
+			setAddress(mainAddress)
 			setShowElection(true);
 			setShowVoter(true);
 			return
@@ -70,12 +74,12 @@ function Main() {
 
 		e.preventDefault();
 		setAddress(e.target.value);
-		handleAddress(address);
+		handleAddress(mainAddress);
 	};
 
 
 	const handleChange = (e) => {
-		setAddress(e.target.value);
+		setMainAddress(e.target.value);
 	};
 
 
@@ -94,7 +98,7 @@ function Main() {
 
 					<TextField required id="standard-required"
 						 label="Required"
-						value={address || ''}
+						value={mainAddress || ''}
 						onChange={(e) => handleChange(e)}
 						fullWidth
 						margin="normal"
@@ -111,15 +115,17 @@ function Main() {
 				
 			
 			</div>
+			{
 			
-			{showElection ? (
-				<Elections address={address} />
+			showElection ? (
+				
+				<Elections address={mainAddress} />
 			) : (
 				<div />
 				) }
 			
 			{ showVoter ?
-				<Voters address={ address } />
+				<Voters address={ mainAddress } />
 				: <div /> }
 		</div>
 	);

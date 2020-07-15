@@ -7,7 +7,7 @@ const ElectionDetails = ({ elections }) => {
 	return (
 		<div className='election-wrapper'>
 			{elections.map((election,item) => (
-			<div className='election-item-wrapper'>
+			<div key={item} className='election-item-wrapper'>
 				{/* <div>{election.id}</div> */}
 				<div className='name'>{election.name}</div>
 				<div className='date'>{election.electionDay}</div>

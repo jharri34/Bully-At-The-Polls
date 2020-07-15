@@ -6,11 +6,13 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/shared/footer';
 import BullyStore from './components/shared/bullystore'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {  StoreProvider } from 'easy-peasy';
+
 
 function App() {
 	return (
 	
-			<BullyStore.Provider>
+			<StoreProvider store={BullyStore}>
 				<React.Fragment>
 					<BrowserRouter>
 						<div className="App">
@@ -20,7 +22,7 @@ function App() {
 						</div>
 					</BrowserRouter>
 				</React.Fragment>
-			</BullyStore.Provider>
+			</StoreProvider>
 	);
 }
 

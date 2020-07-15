@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import BullyStore from '../shared/bullystore';
+import { useStoreActions, useStoreState } from 'easy-peasy';
 import ElectionDetails from './Election-Details';
 import BullySpinner from '../shared/bullyspinner';
 
 const Elections = (address) => {
 	// eslint-disable-next-line
-	const { elections, electionIsLoading } = BullyStore.useStoreState((state) => ({
+	const { elections, electionIsLoading } = useStoreState((state) => ({
 		elections: state.elections,
 		electionIsLoading: state.electionIsLoading
 	}));
 
-	const getElections = BullyStore.useStoreActions((actions) => actions.getElections);
-	const setElectionIsLoading = BullyStore.useStoreActions((actions) => actions.setElectionIsLoading);
+	const getElections = useStoreActions((actions) => actions.getElections);
+	const setElectionIsLoading = useStoreActions((actions) => actions.setElectionIsLoading);
 	//The Effect Hook lets you perform side effects in function components:
 	//https://reactjs.org/docs/hooks-effect.html
 	useEffect(() => {

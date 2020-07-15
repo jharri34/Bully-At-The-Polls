@@ -90,8 +90,8 @@ function VoterReferendumDetails({ contest }) {
 								id="panel1d-header"
 								expandIcon={<ExpandMoreIcon />}
 							>
-								<Typography>
-									<div className="title">{contest.referendumTitle}</div>
+								<Typography className="title">
+				{contest.referendumTitle}
 								</Typography>
 							</AccordionSummary>
 

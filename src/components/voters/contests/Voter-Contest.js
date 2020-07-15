@@ -44,8 +44,8 @@ function VoterContest({ contests }) {
 	return (
 		<div >
 			<Grid container  spacing={2} direction="row" justify="center">
-				{contests.map((contest) => (
-					<Grid item >
+				{contests.map((contest, item) => (
+					<Grid key={item} item >
 						<VoterContestDetails contest={contest} />
 					</Grid>
 				))}

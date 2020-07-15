@@ -59,7 +59,7 @@ function VoterNonReferendumDetails({ contest }) {
 		<div className="nonreferendum-container">
 			<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
 				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
-					<Typography>
+
 						{' '}
 						<div className="nonreferendum-items">
 							<div className="contest-office">{contest.office}</div>
@@ -68,10 +68,10 @@ function VoterNonReferendumDetails({ contest }) {
 								<div className="contest-scope">{contest.district.scope}</div>
 							</div>
 						</div>
-					</Typography>
+					
 				</AccordionSummary>
 				<AccordionDetails>
-					<Typography>{<VoterCandidates candidate={contest} />}</Typography>
+					{<VoterCandidates candidate={contest} />}
 				</AccordionDetails>
 			</Accordion>
 		</div>
