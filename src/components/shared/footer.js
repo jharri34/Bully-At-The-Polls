@@ -20,7 +20,7 @@ function Footer() {
 					<div>BULLY AT THE POLLS</div>
 				</div>
 				<Link to='/about'>About Us</Link>
-			
+				<Link to='/contact'>Contact Us</Link>
 			</div>
 			
 			
