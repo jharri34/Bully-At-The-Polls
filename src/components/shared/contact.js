@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
-import {FormControl, Form} from 'react-bootstrap'
+import { FormControl, Form } from 'react-bootstrap'
 
 function Contact() {
     let history = useHistory();
@@ -24,7 +24,7 @@ function Contact() {
                     <Form.Label>Enter Text</Form.Label>
                     <Form.Control as="textarea" rows="3" />
                 </Form.Group>
-         </Form>
+            </Form>
         </div >
     )
 }
