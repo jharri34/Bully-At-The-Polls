@@ -2,31 +2,31 @@ import React from 'react';
 import VoterReferendumDetails from './Voter-Referendum-Details';
 import VoterNonReferendumDetails from './Voter-NonReferendum-Details';
 import config from '../../shared/config';
+import './voter.css';
 
-import './voter.css'
+
 
 function VoterContestDetails({ contest }) {
+
 	const showContest = (contest) => {
 		if (contest.type !== config.REFERENDUM) {
-			return <div className='nonref'>
-				<VoterNonReferendumDetails
-					contest={ contest }
-				/>
-			</div>;
+			return (
+				<div className="nonref">
+					<VoterNonReferendumDetails contest={contest} />
+				</div>
+			);
 		} else if (contest.type === config.REFERENDUM) {
-			return <div className='referendum'>
-				<VoterReferendumDetails
-					contest={ contest }
-				/>
-			</div>;
+			return (
+
+				<div className="referendum">
+					<VoterReferendumDetails contest={contest} />
+				</div>
+
+			);
 		}
 	};
 
-	return (
-		<div>
-			{ showContest(contest) }
-		</div>
-	);
+	return <div>{showContest(contest)}</div>;
 }
 
 export default VoterContestDetails;

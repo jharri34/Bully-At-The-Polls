@@ -1,17 +1,19 @@
-import { action, createContextStore, thunk } from 'easy-peasy';
+import { action, createStore, thunk } from 'easy-peasy';
 import { getVotersSvc } from '../voters/Voters-Service'
 import { getElections } from '../elections/Elections-Service';
 
-const BullyStore = createContextStore({
+const BullyStore = createStore({
 	address:'',
 	voters:{},
-	electionIds: {"id":2000},
+	electionIds: {},
     elections:[],
 	electionError: '',
     electionIsLoading: false,
     voterError: '',
-    voterIsLoading:false,
-
+	voterIsLoading:false,
+	currentVoterSelection: {},
+	showVoter:false,
+	
 
     /*actions thunk side effects*/
 	getElections: thunk(async (actions,address) => {
@@ -20,7 +22,8 @@ const BullyStore = createContextStore({
 			
             const data  = await getElections(address)
             const resp = await data.json()
-            actions.setElections(resp);
+			actions.setElections(resp);
+			
 			
 		} catch (e) {
 			actions.setElectionError(e);
@@ -28,10 +31,10 @@ const BullyStore = createContextStore({
         
 		
 	}),
-	getVoters: thunk(async (actions,electionIds) => { 
+	getVoters: thunk(async (actions) => { 
 	
 		try {
-         const data  = await getVotersSvc(actions.electionIds)
+         const data  = await getVotersSvc(BullyStore.getState().address, BullyStore.getState().electionIds)
          const resp = await data.json()
          actions.setVoters(resp);
 		} catch (e) {
@@ -50,9 +53,21 @@ const BullyStore = createContextStore({
 		state.electionError = error.message;
 		alert(error.message);
 	}),
+	setCurrentVoterSelection: action((state,currentVoterSelection) =>{
+		state.currentVoterSelection = currentVoterSelection
+	
+	}),
+
+	setShowVoter: action((state,showVoter) =>{
+		state.showVoter = showVoter
+	 
+	}),
 	setElectionIds: action((state,electionId) =>{
 		state.electionIds = {...state.electionIds,electionId}	
 	
+	}),
+	getAddress: action((state) => {
+		return state.address;
 	}),
 	setAddress: action((state,address) => {
 		state.address = address;

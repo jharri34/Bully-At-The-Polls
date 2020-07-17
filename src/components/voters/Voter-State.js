@@ -6,7 +6,7 @@ function VoterState({ voterstate }) {
 		<div>
 			<div>
 				{ voterstate.map((vstate, item) => (
-					<React.Fragment>
+					<React.Fragment key={item} >
 						<div className='voter-state-name'>
 							<div>{ vstate.electionAdministrationBody.name }</div>
 						</div>
@@ -23,7 +23,7 @@ function VoterState({ voterstate }) {
 
 						<div>
 							{ vstate.sources.map((source, item) => (
-								<React.Fragment>
+								<React.Fragment key={item}>
 									<div>{ source.name }</div>
 									<div>{ source.official }</div>
 								</React.Fragment>

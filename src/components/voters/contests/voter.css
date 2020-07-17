@@ -106,22 +106,25 @@
 
 .referendum{
     display: flex;
-    border: 2px solid;
+    /* border: 2px solid; */
     flex-direction: row;
-    /* width: 800px; */
-    height: 200px;
-    word-break: break-all;
+    /* width: 400px;  */
+    /* height: 200px; */
+    /* word-break: break-all; */
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    justify-content: flex-start;
     margin: 15px 40px;
-    background-color: lightgray;
+    /* background-color: lightgray; */
+    
 }
 
 .referendum-container{
     /* display: flex; */
     /* border: 2px solid; */
+    margin: 30px 50px;
     font-size: 22px;
+    /* flex-wrap: wrap; */
 }
 
 .referendum-container .type{
@@ -139,3 +142,7 @@
     opacity: 0.6;
 }
 
+
+.MuiTypography-body1 {
+    word-break: break-all;
+}
