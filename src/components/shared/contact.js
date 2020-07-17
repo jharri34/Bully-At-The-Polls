@@ -1,15 +1,32 @@
 import React, { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form'
 import { Form, Col, Row, Button } from 'react-bootstrap'
 import emailjs from "emailjs-com"
 
+
 // const [ address, setAddress ] = useState('');
 function Contact() {
+
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [subject, setSubject] = useState('')
     const [message, setMessage] = useState('')
+
+    const { register, handleSubmit, reset } = useForm();
+
+    const onSubmit = (data, e) => {
+        e.preventDefault()
+        console.log(data, e);
+        setFirstName(e.target.value)
+        setLastName(e.target.value)
+        setEmail(e.target.value)
+        setSubject(e.target.value)
+        setMessage(e.target.value)
+  
+    }
+
 
 
     let history = useHistory();
@@ -23,7 +40,7 @@ function Contact() {
             <h1>Let's Chat</h1>
             <p>We would love to hear your thoughts, concerns or problems with anything so we can improve</p>
             <div>
-                <Form>
+                <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Row>
                             <Col>
@@ -31,15 +48,17 @@ function Contact() {
                                     type="text"
                                     name="firstName"
                                     value={ firstName }
-                                    onChange={e => setFirstName(e.target.value)}
-                                    placeholder="First Name" />
+                                    onChange={ e => setFirstName(e.target.value) }
+                                    placeholder="First Name"
+                                    
+                                  />
                             </Col>
                             <Col>
                                 <Form.Control
                                     type="text"
                                     name="lastName"
                                     value={ lastName }
-                                    onChange={e => setLastName(e.target.value)}
+                                    onChange={ e => setLastName(e.target.value) }
                                     placeholder="Last Name" />
                             </Col>
                         </Form.Row>
@@ -51,16 +70,17 @@ function Contact() {
                             type="email"
                             name="email"
                             value={ email }
-                            onChange={e => setEmail(e.target.value)} placeholder="name@email.com" />
+                            onChange={ e => setEmail(e.target.value) }
+                            placeholder="name@email.com" />
                     </Form.Group>
 
-                    <Form.Group controlId="exampleForm.ControlInput3">
+                    <Form.Group controlId="exampleForm.ControlInput2">
                         <Form.Label>Subject</Form.Label>
                         <Form.Control
                             type="text"
                             name="subject"
                             value={ subject }
-                            onChange={e => setSubject(e.target.value)} />
+                            onChange={ e => setSubject(e.target.value) } />
                     </Form.Group>
 
                     <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -70,7 +90,7 @@ function Contact() {
                             rows="3"
                             name="message"
                             value={ message }
-                            onChange={e => setMessage(e.target.value)} />
+                            onChange={ e => setMessage(e.target.value) } />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">
