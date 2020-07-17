@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom';
 import { Form, Col, Row, Button } from 'react-bootstrap'
 import emailjs from "emailjs-com"
@@ -11,13 +11,6 @@ function Contact() {
     const [subject, setSubject] = useState('')
     const [message, setMessage] = useState('')
 
-    const handleChange = (e) => {
-        setFirstName(e.target.value);
-        setLastName(e.target.value);
-        setEmail(e.target.value);
-        setSubject(e.target.value);
-        setMessage(e.target.value);
-	};
 
     let history = useHistory();
 
@@ -38,28 +31,48 @@ function Contact() {
                                     type="text"
                                     name="firstName"
                                     value={ firstName }
-                                    onChange={(e) => handleChange(e)}
-                                    placeholder="First name" />
+                                    onChange={e => setFirstName(e.target.value)}
+                                    placeholder="First Name" />
                             </Col>
                             <Col>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Last name" />
+                                    name="lastName"
+                                    value={ lastName }
+                                    onChange={e => setLastName(e.target.value)}
+                                    placeholder="Last Name" />
                             </Col>
                         </Form.Row>
                     </Form.Group>
+
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="name@email.com" />
+                        <Form.Control
+                            type="email"
+                            name="email"
+                            value={ email }
+                            onChange={e => setEmail(e.target.value)} placeholder="name@email.com" />
                     </Form.Group>
+
                     <Form.Group controlId="exampleForm.ControlInput3">
                         <Form.Label>Subject</Form.Label>
-                        <Form.Control type="text" />
+                        <Form.Control
+                            type="text"
+                            name="subject"
+                            value={ subject }
+                            onChange={e => setSubject(e.target.value)} />
                     </Form.Group>
+
                     <Form.Group controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Enter Text</Form.Label>
-                        <Form.Control as="textarea" rows="3" />
+                        <Form.Control
+                            as="textarea"
+                            rows="3"
+                            name="message"
+                            value={ message }
+                            onChange={e => setMessage(e.target.value)} />
                     </Form.Group>
+
                     <Button variant="primary" type="submit">
                         Submit
                 </Button>
