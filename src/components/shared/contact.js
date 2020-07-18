@@ -36,10 +36,13 @@ function Contact() {
     };
 
     return (
-        <div>
+
+        <div >
             <h1>Let's Chat</h1>
+
             <p>We would love to hear your thoughts, concerns or problems with anything so we can improve</p>
-            <div>
+
+            <div class="">
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Row>
@@ -50,7 +53,7 @@ function Contact() {
                                     value={ firstName }
                                     onChange={ e => setFirstName(e.target.value) }
                                     placeholder="First Name"
-                                    
+
                                   />
                             </Col>
                             <Col>
