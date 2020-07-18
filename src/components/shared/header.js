@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useHistory } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 
 
@@ -26,10 +26,9 @@ function Header() {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto">
-						<Nav.Link
-							href="#home"
-							onClick={ () => handleOnClick() }>HOME
-						</Nav.Link>
+						<Nav.Link href="/#home">Home</Nav.Link>
+						<Nav.Link href="/contact">Contact</Nav.Link>
+
 
 					</Nav>
 				</Navbar.Collapse>

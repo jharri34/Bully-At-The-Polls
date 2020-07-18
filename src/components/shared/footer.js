@@ -19,7 +19,9 @@ function Footer() {
 				<div className='footer-title'>
 					<div>BULLY AT THE POLLS</div>
 				</div>
+				&nbsp;
 				<Link to='/about'>About Us</Link>
+				&nbsp;
 				<Link to='/contact'>Contact Us</Link>
 			</div>
 			
