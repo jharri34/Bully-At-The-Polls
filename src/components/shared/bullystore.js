@@ -6,6 +6,7 @@ const BullyStore = createStore({
 	address:'',
 	voters:{},
 	electionIds: {},
+	electionId:{},
     elections:[],
 	electionError: '',
     electionIsLoading: false,
@@ -20,8 +21,10 @@ const BullyStore = createStore({
         
 		try {
 			
-            const data  = await getElections(address)
-            const resp = await data.json()
+			const data  = await getElections(address)
+			
+			const resp = await data.json()
+			console.log(resp)
 			actions.setElections(resp);
 			
 			
@@ -32,12 +35,14 @@ const BullyStore = createStore({
 		
 	}),
 	getVoters: thunk(async (actions) => { 
-	
+		console.log(actions)
 		try {
-         const data  = await getVotersSvc(BullyStore.getState().address, BullyStore.getState().electionIds)
+         const data  = await getVotersSvc(BullyStore.getState().address, BullyStore.getState().electionId)
          const resp = await data.json()
-         actions.setVoters(resp);
+		 actions.setVoters(resp);
+		 console.log(resp)
 		} catch (e) {
+			console.log(e)
 			actions.setVoterError(e);
         }
 
@@ -57,7 +62,10 @@ const BullyStore = createStore({
 		state.currentVoterSelection = currentVoterSelection
 	
 	}),
-
+	setElectionId: action((state,electionId) =>{
+		state.electionId = electionId
+	 
+	}),
 	setShowVoter: action((state,showVoter) =>{
 		state.showVoter = showVoter
 	 

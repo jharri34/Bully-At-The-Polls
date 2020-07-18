@@ -25,11 +25,13 @@ const ElectionDetails = ({ elections }) => {
 	const classes = useStyles();
 	const setShowVoter =
  useStoreActions((actions) => actions.setShowVoter);
+ const setElectionId =
+ useStoreActions((actions) => actions.setElectionId);
 
 const handleClick = (e,election) =>{
 	e.preventDefault();
-	console.log(election)
 	if(election !== undefined && election !== null){
+	setElectionId(election.id)
 	setShowVoter(true)
 	}
 
@@ -44,8 +46,8 @@ const handleClick = (e,election) =>{
 			
 				{elections.map((election,index) => (
 
-					<Button onClick={(e) => { handleClick(e,election) }}>
-					<div key={index} className="election-item-wrapper">
+					<Button key={index}  onClick={(e) => { handleClick(e,election) }}>
+					<div className="election-item-wrapper">
 						{/* <div>{election.id}</div> */}
 						<div className="name">{election.name}</div>
 						<div className="date">{election.electionDay}</div>

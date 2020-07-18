@@ -9,7 +9,8 @@ function Voters(address) {
 	const { voters, voterIsLoading, elections } = useStoreState((state) => ({
 		voters: state.voters,
 		voterIsLoading: state.voterIsLoading,
-		elections: state.elections
+		elections: state.elections,
+		electionId: state.electionId
 	}));
 
 	const setAddress = useStoreActions((actions) => actions.setAddress);
@@ -17,20 +18,23 @@ function Voters(address) {
 	const setElectionIds = useStoreActions((actions) => actions.setElectionIds);
 	const setVoterIsLoading = useStoreActions((actions) => actions.setVoterIsLoading);
 
-	useEffect(() => {
-		
-		setAddress(address);
-		setElectionIds(elections);
-		getVoters();
-		if (voters) {
-			setVoterIsLoading(true);
-		}
-		// eslint-disable-next-line
-	}, [elections]);
+	useEffect(
+		() => {
+			setAddress(address);
+			getVoters(address);
+			setElectionIds(elections);
+			if (voters) {
+				console.log(voterIsLoading);
+				setVoterIsLoading(true);
+			}
+			// eslint-disable-next-line
+		},
+		[ elections, voterIsLoading ]
+	);
 
 	return (
 		<div>
-			{ (() => {
+			{(() => {
 				if (
 					voterIsLoading === true &&
 					voterIsLoading !== undefined &&
@@ -39,7 +43,7 @@ function Voters(address) {
 				) {
 					return (
 						<div>
-							<VoterDetails voters={ voters } />
+							<VoterDetails voters={voters} />
 						</div>
 					);
 				} else {
@@ -49,7 +53,7 @@ function Voters(address) {
 						</div>
 					);
 				}
-			})() }
+			})()}
 		</div>
 	);
 }

@@ -1,10 +1,10 @@
 // eslint-disable-next-line
-import config from '../shared/config'
-
-export const getElections =  async () => {
-
-    let url =config.ELECTION_URL + config.QUERY_KEY + config.API_KEY
-    return await fetch(url)
-  }   
-
+import config from '../shared/config';
+import withQuery from 'with-query';
+export const getElections = async () => {
+	const url = withQuery(config.ELECTION_URL, {
+		key: config.API_KEY
+  });
   
+	return await fetch(url);
+};
