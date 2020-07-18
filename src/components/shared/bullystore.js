@@ -35,14 +35,14 @@ const BullyStore = createStore({
 		
 	}),
 	getVoters: thunk(async (actions) => { 
-		console.log(actions)
+		console.log('getVoters actions', actions)
 		try {
          const data  = await getVotersSvc(BullyStore.getState().address, BullyStore.getState().electionId)
          const resp = await data.json()
 		 actions.setVoters(resp);
-		 console.log(resp)
+		 
 		} catch (e) {
-			console.log(e)
+			
 			actions.setVoterError(e);
         }
 

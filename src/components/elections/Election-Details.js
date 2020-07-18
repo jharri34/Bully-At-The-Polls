@@ -1,11 +1,10 @@
 import React from 'react';
-// import Table from 'react-bootstrap/Table';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 import './election.css';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
-
+import ErrorBoundary from '../shared/errorboundary'
 const useStyles = makeStyles((theme) => ({
 	root: {
 	  display: 'flex',
@@ -29,6 +28,7 @@ const ElectionDetails = ({ elections }) => {
  useStoreActions((actions) => actions.setElectionId);
 
 const handleClick = (e,election) =>{
+	console.log('in election-details',election)
 	e.preventDefault();
 	if(election !== undefined && election !== null){
 	setElectionId(election.id)
@@ -40,7 +40,7 @@ const handleClick = (e,election) =>{
 
 	return (
 		<div className={classes.root}>
-			
+			<ErrorBoundary>
 			<div className="election-wrapper">
 			<ButtonGroup variant="text" color="primary" aria-label="text primary button group">
 			
@@ -48,16 +48,14 @@ const handleClick = (e,election) =>{
 
 					<Button key={index}  onClick={(e) => { handleClick(e,election) }}>
 					<div className="election-item-wrapper">
-						{/* <div>{election.id}</div> */}
 						<div className="name">{election.name}</div>
 						<div className="date">{election.electionDay}</div>
-						{/* <div>{election.ocdDivisionId}</div> */}
 					</div>
 					</Button>
 				))}
 				</ButtonGroup>
 			</div>
-			
+			</ErrorBoundary>
 		</div>
 	);
 };

@@ -1,7 +1,8 @@
 import React from 'react';
+import Link from '@material-ui/core/Link';
 
 function VoterState({ voterstate }) {
-
+	console.log('voterstate', voterstate)
 	return (
 		<div>
 			<div>
@@ -11,14 +12,21 @@ function VoterState({ voterstate }) {
 							<div>{ vstate.electionAdministrationBody.name }</div>
 						</div>
 						<div className='voter-address'>
+							<>
+							{(typeof vstate.electionAdministrationBody.correspondenceAddress === 'undefined')? <div/>: (
+								<div>
 							<div>{ vstate.electionAdministrationBody.correspondenceAddress.line1 }</div>
 							<div>{ vstate.electionAdministrationBody.correspondenceAddress.city }</div>
 							<div>{ vstate.electionAdministrationBody.correspondenceAddress.state }</div>
 							<div>{ vstate.electionAdministrationBody.correspondenceAddress.zip }</div>
-						</div>
+							</div>
+							)}
+							</>
+	</div>
+
 						<div className='voter-url'>
-							<div>{ vstate.electionAdministrationBody.electionInfoUrl }</div>
-							<div>{ vstate.electionAdministrationBody.ballotInfoUrl }</div>
+							<div><Link className="url" href={vstate.electionAdministrationBody.electionInfoUrl} target="_blank" rel="noopener">{ vstate.electionAdministrationBody.electionInfoUrl }</Link></div>
+							<div><Link className="url" href={vstate.electionAdministrationBody.ballotInfoUrl} target="_blank" rel="noopener">{ vstate.electionAdministrationBody.ballotInfoUrl }</Link></div>
 						</div>
 
 						<div>

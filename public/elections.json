@@ -1,36 +1,35 @@
 {
-    "elections": [
-      {
-        "id": "2000",
-        "name": "VIP Test Election",
-        "electionDay": "2021-06-06",
-        "ocdDivisionId": "ocd-division/country:us"
-      },
-      {
-        "id": "4977",
-        "name": "Colorado State Primary Election",
-        "electionDay": "2020-06-30",
-        "ocdDivisionId": "ocd-division/country:us/state:co"
-      },
-      {
-        "id": "4990",
-        "name": "Louisiana Presidential and Municipal Primary Election",
-        "electionDay": "2020-07-11",
-        "ocdDivisionId": "ocd-division/country:us/state:la"
-      },
-      {
-        "id": "4992",
-        "name": "Alabama Primary Runoff Election",
-        "electionDay": "2020-07-14",
-        "ocdDivisionId": "ocd-division/country:us/state:al"
-      },
-      {
-        "id": "4997",
-        "name": "North Carolina 11th Congressional District Republican Primary Election",
-        "electionDay": "2020-06-23",
-        "ocdDivisionId": "ocd-division/country:us/state:nc"
-      }
-    ],
-    "kind": "civicinfo#electionsQueryResponse"
-  }
-  
+  "elections": [
+    {
+      "id": "2000",
+      "name": "VIP Test Election",
+      "electionDay": "2021-06-06",
+      "ocdDivisionId": "ocd-division/country:us"
+    },
+    {
+      "id": "4979",
+      "name": "Georgia General Primary Runoff Election",
+      "electionDay": "2020-08-11",
+      "ocdDivisionId": "ocd-division/country:us/state:ga"
+    },
+    {
+      "id": "5003",
+      "name": "Michigan State Primary Election",
+      "electionDay": "2020-08-04",
+      "ocdDivisionId": "ocd-division/country:us/state:mi"
+    },
+    {
+      "id": "5005",
+      "name": "Washington State Primary Election",
+      "electionDay": "2020-08-04",
+      "ocdDivisionId": "ocd-division/country:us/state:wa"
+    },
+    {
+      "id": "5009",
+      "name": "Wisconsin State Primary Election",
+      "electionDay": "2020-08-11",
+      "ocdDivisionId": "ocd-division/country:us/state:wi"
+    }
+  ],
+  "kind": "civicinfo#electionsQueryResponse"
+}

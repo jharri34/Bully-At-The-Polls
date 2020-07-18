@@ -6,11 +6,12 @@ import BullySpinner from '../shared/bullyspinner';
 function Voters(address) {
 	// eslint-disable-next-line
 
-	const { voters, voterIsLoading, elections } = useStoreState((state) => ({
+	const { voters, voterIsLoading, elections,electionId,showVoter } = useStoreState((state) => ({
 		voters: state.voters,
 		voterIsLoading: state.voterIsLoading,
 		elections: state.elections,
-		electionId: state.electionId
+		electionId: state.electionId,
+		showVoter: state.showVoter
 	}));
 
 	const setAddress = useStoreActions((actions) => actions.setAddress);
@@ -19,7 +20,9 @@ function Voters(address) {
 	const setVoterIsLoading = useStoreActions((actions) => actions.setVoterIsLoading);
 
 	useEffect(
+		
 		() => {
+			console.log('in voter',address)
 			setAddress(address);
 			getVoters(address);
 			setElectionIds(elections);
@@ -29,7 +32,7 @@ function Voters(address) {
 			}
 			// eslint-disable-next-line
 		},
-		[ elections, voterIsLoading ]
+		[  voterIsLoading,electionId ]
 	);
 
 	return (

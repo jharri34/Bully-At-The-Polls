@@ -1,10 +1,9 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import VoterContestDetails from './Voter-Contest-Details';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import config from '../../shared/config';
+import ErrorBoundary from '../../shared/errorboundary';
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
@@ -20,36 +19,45 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-
 function VoterContest({ contests }) {
 
+	// const nonReferendum = (contests) => {
+	// 	if (contests) {
+	// 		[].concat(
+	// 			...contests.map((contest) => {
+	// 				if (contest.type !== config.REFERENDUM) {
+	// 					return contest;
+	// 				}
+	// 			})
+	// 		);
+	// 	}
+	// };
 
-  const nonReferendum = [].concat(...contests.map(contest => {
-      if(contest.type !== config.REFERENDUM){
-        return contest
-      }
-  }))
+	// const referendum = (contests) => {
 
-
-    
-  const referendum = [].concat(...contests.map(contest => {
-    if(contest.type === config.REFERENDUM){
-      return contest
-    }
-}))
-
-    
-  
+	// 	if (contests) {
+	// 		[].concat(
+	// 			...contests.map((contest) => {
+	// 				if (contest.type === config.REFERENDUM) {
+	// 					return contest;
+	// 				}
+	// 			})
+	// 		);
+	// 	}
+	// };
 	const classes = useStyles();
+	console.log('contests', contests);
 	return (
-		<div >
-			<Grid container  spacing={2} direction="row" justify="center">
-				{contests.map((contest, item) => (
-					<Grid key={item} item >
-						<VoterContestDetails contest={contest} />
-					</Grid>
-				))}
-			</Grid>
+		<div>
+			<ErrorBoundary>
+				<Grid container spacing={2} direction="row" justify="center">
+					{contests.map((contest, item) => (
+						<Grid key={item} item>
+							<VoterContestDetails contest={contest} />
+						</Grid>
+					))}
+				</Grid>
+			</ErrorBoundary>
 		</div>
 	);
 }
