@@ -24,10 +24,35 @@ function Contact() {
         setEmail(e.target.value)
         setSubject(e.target.value)
         setMessage(e.target.value)
+
+    //     let templateParams = {
+    //         from_name: email,
+    //         to_name: 'bullyatthepolls@gmail.com',
+    //         subject: subject,
+    //         message_html: message,
+    //        }
+    //        emailjs.send(
+    //         'gmail',
+    //         'template_E8o5hEfv',
+    //          templateParams,
+    //         'user_x4DCXAHqhldniEI0cQ2Lj'
+    //        )
+    //        this.resetForm()
+    //    }
+    //   resetForm() {
+    //       this.setState({
+    //         name: '',
+    //         email: '',
+    //         subject: '',
+    //         message: '',
+    //       })
+    //     }
   
     }
 
-
+// need to configure emailjs for serverless action
+// need to complet handleSubmit function for form
+// need to remove controlled input in form
 
     let history = useHistory();
 
