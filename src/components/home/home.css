@@ -12,8 +12,6 @@
     position: inherit;
 }
 
-
-
 .quote{
     height: 400px;
     display: flex;
@@ -23,6 +21,9 @@
     padding: 0px 120px 0 500px;
 }
 
+#button{
+    background-color: #007bff;
+}
 .home button{
     font-size: 20px;
     margin-top: 40px;

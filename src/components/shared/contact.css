@@ -1,5 +1,40 @@
-.div {
+.contact-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 30px;
+}
 
+.contact-image{
+        /* margin: 0 30px; */
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        width: auto;
+        height: 100px;
+        position: absolute;
+        z-index: -1;
+        top: 178px;
+        left: 100px;
+}
+
+.contact-wrapper p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 40px 30px 30px;
+    padding: 0px 150px;
+    font-size: 35px;
+    width: 73%;
+    position: relative;
+    left: 240px;
 }
 
 
+.contac-form{
+    /* display: flex;  */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 0 50px;
+    width: 90%;
+}
