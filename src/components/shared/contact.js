@@ -16,7 +16,7 @@ function Contact() {
     const { register, reset } = useForm();
 
     const handleSubmit = (evt) => {
-        evt.preventDefault() 
+        evt.preventDefault()
         console.log('am i being clicked');
 
         setFirstName(evt.target.value)
@@ -26,19 +26,19 @@ function Contact() {
         setMessage(evt.target.value)
 
         let templateParams = {
-            from_name: email,
-            to_name: 'bullyatthepolls@gmail.com',
+            user_email: email,
+            first_name: firstName,
+            last_name: lastName,
+            to_name: "bullyatthepolls@gmail.com",
             subject: subject,
-            message_html: message,
+            message_html: message
         }
-
         emailjs.send(
             'gmail',
-            'template_E8o5hEfv',
+            'bully_at_the_polls_contact',
             templateParams,
             'user_x4DCXAHqhldniEI0cQ2Lj'
         )
-
         evt.target.reset()
     }
 
@@ -111,7 +111,7 @@ function Contact() {
                     <Button variant="primary" type="submit" >Submit</Button>
                 </Form>
             </div>
-            {/* <a href="mailto:bullyatthepolls@gmail.com" target="_blank">Email</a> */}
+            {/* <a href="mailto:bullyatthepolls@gmail.com" target="_blank">Email</a> */ }
         </div >
     )
 }
