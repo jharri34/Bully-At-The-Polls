@@ -47,7 +47,7 @@ function Home() {
 
 			<Grid container wrap="nowrap" spacing={2}>
 				<Grid item xs sm lg xl>
-					<Button variant="contained" color="primary" onClick={handleOnClick}>
+					<Button id='button' variant="contained" color="primary" onClick={handleOnClick}>
 						Locate Election
 					</Button>
 				</Grid>

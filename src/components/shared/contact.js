@@ -5,6 +5,9 @@ import { Form, Col, Button } from 'react-bootstrap'
 import emailjs from "emailjs-com"
 
 
+import './contact.css'
+
+
 function Contact() {
 
     const [firstName, setFirstName] = useState('')
@@ -45,12 +48,14 @@ function Contact() {
 
     return (
 
-        <div >
-            <h1>Let's Chat</h1>
+        <div className='contact-wrapper'>
+            <div className='contact-image'>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71an3gGqHWL._SY355_.png"></img>
+            </div>
 
-            <p>We would love to hear your thoughts, concerns or problems with anything so we can improve</p>
+            <p>We would love to hear your thoughts, concerns or problems with anything so we can improve!!</p>
 
-            <div class="">
+            <div class="contac-form">
                 <Form onSubmit={ handleSubmit }>
                     <Form.Group controlId="formBasicName">
                         <Form.Row>
@@ -74,7 +79,7 @@ function Contact() {
                     </Form.Group>
 
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control
                             type="email"
                             name="email"
@@ -84,22 +89,24 @@ function Contact() {
                     </Form.Group>
 
                     <Form.Group controlId="formBasicSubject">
-                        <Form.Label>Subject</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control
                             type="text"
                             name="subject"
                             value={ subject }
-                            onChange={ e => setSubject(e.target.value) } />
+                            onChange={ e => setSubject(e.target.value) }
+                        placeholder="Subject" />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicMessage">
-                        <Form.Label>Enter Text</Form.Label>
+                        <Form.Label></Form.Label>
                         <Form.Control
                             as="textarea"
                             rows="3"
                             name="message"
                             value={ message }
-                            onChange={ e => setMessage(e.target.value) } />
+                            onChange={ e => setMessage(e.target.value) }
+                            placeholder="Message" />
                     </Form.Group>
 
                     <Button variant="primary" type="submit" >Submit</Button>

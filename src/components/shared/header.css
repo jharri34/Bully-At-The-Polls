@@ -27,6 +27,10 @@
     /* border-right: 2px solid gray; */
 }
 
+.footer-info-wrapper a{
+    margin-right: 15px;
+
+}
 .footer-title{
     /* display: flex;
     width: 30%; */
