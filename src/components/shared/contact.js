@@ -42,6 +42,7 @@ function Contact() {
         evt.target.reset()
     }
 
+    // add error handling for email, name, message values
 
     return (
 
