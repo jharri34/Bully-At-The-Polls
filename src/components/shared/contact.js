@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 import { useForm } from 'react-hook-form'
-import { Form, Col, Row, Button } from 'react-bootstrap'
+import { Form, Col, Button } from 'react-bootstrap'
 import emailjs from "emailjs-com"
-import config from './config'
+
 
 function Contact() {
 
@@ -42,12 +42,6 @@ function Contact() {
         evt.target.reset()
     }
 
-
-    let history = useHistory();
-
-    // const handleOnClick = () => {
-    //     history.push('/main');
-    // };
 
     return (
 
