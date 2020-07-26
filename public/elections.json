@@ -7,6 +7,12 @@
       "ocdDivisionId": "ocd-division/country:us"
     },
     {
+      "id": "4953",
+      "name": "Louisiana Municipal General Election",
+      "electionDay": "2020-08-15",
+      "ocdDivisionId": "ocd-division/country:us/state:la"
+    },
+    {
       "id": "4979",
       "name": "Georgia General Primary Runoff Election",
       "electionDay": "2020-08-11",
@@ -23,6 +29,12 @@
       "name": "Washington State Primary Election",
       "electionDay": "2020-08-04",
       "ocdDivisionId": "ocd-division/country:us/state:wa"
+    },
+    {
+      "id": "5008",
+      "name": "Vermont State Primary Election",
+      "electionDay": "2020-08-11",
+      "ocdDivisionId": "ocd-division/country:us/state:vt"
     },
     {
       "id": "5009",

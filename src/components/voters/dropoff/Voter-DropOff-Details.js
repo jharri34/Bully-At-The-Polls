@@ -65,56 +65,26 @@ const AccordionDetails = withStyles((theme) => ({
 	}
 }))(MuiAccordionDetails);
 
-function VoterDropOffDetails({ drop }) {
+const formatAddress = (dropOffAddress) =>{
+const {locationName, line1, city, state, zip} =dropOffAddress
+return `${locationName} ${line1} ${city}, ${state} ${zip}`
 
-    return (
-        <div>
-            
-        </div>
-    )
-	// const classes = useStyles();
-	// const [ expanded, setExpanded ] = React.useState('false');
+}
 
-	// const handleChange = (panel) => (event, newExpanded) => {
-	// 	setExpanded(newExpanded ? panel : false);
-	// };
 
-	// const showContest = (nonReferendum, referendum) => {
-	// 	return (
-	// 		<div>
-	// 			<Grid container spacing={2} direction="row" justify="center">
-	// 				{nonReferendum.map((nonRef, index) => (
-	// 					<Grid item>
-	// 						<VoterNonReferendumDetails contest={nonRef} index={index} />
-	// 					</Grid>
-	// 				))}
-
-	// 				<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-	// 					<AccordionSummary
-	// 						aria-controls="panel1d-content"
-	// 						id="panel1d-header"
-	// 						expandIcon={<ExpandMoreIcon />}
-	// 					>
-	// 						<Typography>
-	// 							<div>
-	// 								<Typography>Referendum</Typography>
-	// 							</div>
-	// 						</Typography>
-	// 					</AccordionSummary>
-	// 					<AccordionDetails>
-	// 						{referendum.map((referen) => (
-	// 							<Grid item>
-	// 								<VoterReferendumDetails contest={referen} />
-	// 							</Grid>
-	// 						))}
-	// 					</AccordionDetails>
-	// 				</Accordion>
-	// 			</Grid>
-	// 		</div>
-	// 	);
-	// };
-
-	// return <div>{showContest(nonReferendum, referendum)}</div>;
+function VoterDropOffDetails({ dropOff }) {
+	console.log(dropOff);
+	return (
+		<div>
+			{dropOff.map((drop, item) => (
+				<div key={item} >
+					<div>{drop.name}</div>
+					<div>{formatAddress(drop.address)}</div>
+					<div>{drop.pollingHours}</div>
+				</div>
+			))}
+		</div>
+	);
 }
 
 export default VoterDropOffDetails;

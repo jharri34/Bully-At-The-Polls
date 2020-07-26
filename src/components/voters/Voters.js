@@ -32,7 +32,7 @@ function Voters(address) {
 			}
 			// eslint-disable-next-line
 		},
-		[ voterIsLoading, electionId]
+		[ voterIsLoading, electionId, showVoter]
 	);
 
 	return (

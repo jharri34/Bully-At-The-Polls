@@ -1,0 +1,536 @@
+{
+    "election": {
+      "id": "2000",
+      "name": "VIP Test Election",
+      "electionDay": "2021-06-06",
+      "ocdDivisionId": "ocd-division/country:us"
+    },
+    "normalizedInput": {
+      "line1": "1760 Dartford Drive",
+      "city": "Cordova",
+      "state": "TN",
+      "zip": "38016"
+    },
+    "contests": [
+      {
+        "type": "General",
+        "office": "United States Senate",
+        "level": [
+          "country"
+        ],
+        "roles": [
+          "legislatorUpperBody"
+        ],
+        "district": {
+          "name": "Tennessee",
+          "scope": "statewide",
+          "id": "ocd-division/country:us/state:tn"
+        },
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ],
+        "candidates": [
+          {
+            "name": "Lamar Alexander",
+            "party": "Republican",
+            "candidateUrl": "http://www.lamaralexander.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/lamaralexander"
+              },
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/lamaralexander"
+              },
+              {
+                "type": "YouTube",
+                "id": "https://www.youtube.com/user/lamaralexander2014"
+              }
+            ]
+          },
+          {
+            "name": "Gordon Ball",
+            "party": "Democratic",
+            "candidateUrl": "http://www.gordonballsenate.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/gordonballsenate"
+              },
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/GordonBall4TN"
+              },
+              {
+                "type": "YouTube",
+                "id": "https://www.youtube.com/channel/UC7xq00IOEbneDV8TxGtEULw"
+              }
+            ]
+          },
+          {
+            "name": "Joe Wilmoth",
+            "party": "Constitution",
+            "candidateUrl": "http://www.wilmoth2014.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/529619930476434"
+              }
+            ]
+          },
+          {
+            "name": "Martin Pleasant",
+            "party": "Green",
+            "candidateUrl": "http://www.martinpleasant.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/martinpleasnt"
+              },
+              {
+                "type": "YouTube",
+                "id": "https://www.youtube.com/user/martinpleasant"
+              }
+            ]
+          },
+          {
+            "name": "Tom Emerson, Jr.",
+            "party": "Independent",
+            "candidateUrl": "http://www.tomefortnsenate.tomemersonjr.com/9.html"
+          },
+          {
+            "name": "Edmund L. Gauthier",
+            "party": "Independent",
+            "candidateUrl": "http://www.gauthierforsenate2014.com/"
+          },
+          {
+            "name": "Joshua James",
+            "party": "Independent",
+            "candidateUrl": "http://www.joshuajamesforsenate.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/695678837133301"
+              }
+            ]
+          },
+          {
+            "name": "Danny Page",
+            "party": "Independent",
+            "candidateUrl": "http://dannypageforsenate.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/PageforTN"
+              },
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/TNBorderPatrol"
+              }
+            ]
+          },
+          {
+            "name": "Bartholomew J. Phillips",
+            "party": "Independent",
+            "channels": [
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/BartPhillips14"
+              }
+            ]
+          },
+          {
+            "name": "C. Salekin",
+            "party": "Independent"
+          },
+          {
+            "name": "Eric Schechter",
+            "party": "Independent"
+          },
+          {
+            "name": "Rick Tyler",
+            "party": "Independent",
+            "candidateUrl": "http://www.tylerforsenate.com/"
+          }
+        ]
+      },
+      {
+        "type": "General",
+        "office": "United States House of Representatives District 9",
+        "level": [
+          "country"
+        ],
+        "roles": [
+          "legislatorLowerBody"
+        ],
+        "district": {
+          "name": "Tennessee's 9th congressional district",
+          "scope": "congressional",
+          "id": "ocd-division/country:us/state:tn/cd:9"
+        },
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ],
+        "candidates": [
+          {
+            "name": "Charlotte Bergmann",
+            "party": "Republican",
+            "candidateUrl": "http://charlottebergmann.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/107682822592866"
+              },
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/ElectBergmann"
+              }
+            ]
+          },
+          {
+            "name": "Steve Cohen",
+            "party": "Democratic",
+            "candidateUrl": "http://www.cohenforcongress.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/stevecohenforcongress"
+              },
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/ReElectCohen"
+              }
+            ]
+          },
+          {
+            "name": "Floyd Wayne Alberson",
+            "party": "Independent"
+          },
+          {
+            "name": "Herbert Bass",
+            "party": "Independent"
+          },
+          {
+            "name": "Paul Cook",
+            "party": "Independent",
+            "candidateUrl": "http://www.joinpaulcook.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/electpaulcook"
+              },
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/joinpaulcook"
+              },
+              {
+                "type": "YouTube",
+                "id": "https://www.youtube.com/user/joinpaulcook"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "General",
+        "office": "Governor",
+        "level": [
+          "administrativeArea1"
+        ],
+        "roles": [
+          "headOfGovernment"
+        ],
+        "district": {
+          "name": "Tennessee",
+          "scope": "statewide",
+          "id": "ocd-division/country:us/state:tn"
+        },
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ],
+        "candidates": [
+          {
+            "name": "Bill Haslam",
+            "party": "Republican",
+            "candidateUrl": "http://www.billhaslam.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/TeamHaslam"
+              },
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/BillHaslam"
+              },
+              {
+                "type": "YouTube",
+                "id": "https://www.youtube.com/channel/UCqFCC8EkMljLs7UTrr-OvRA"
+              }
+            ]
+          },
+          {
+            "name": "Charles V. \"Charlie\" Brown",
+            "party": "Democratic",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/1379534778986698"
+              }
+            ]
+          },
+          {
+            "name": "Shaun Crowell",
+            "party": "Constitution",
+            "candidateUrl": "http://www.crowellforgov.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/crowellforgov"
+              },
+              {
+                "type": "Twitter",
+                "id": "https://twitter.com/DrShaunCrowell"
+              },
+              {
+                "type": "YouTube",
+                "id": "https://www.youtube.com/channel/UCeCof3drGV6ocHKoevj5ljw"
+              }
+            ]
+          },
+          {
+            "name": "Isa Infante",
+            "party": "Green",
+            "candidateUrl": "http://www.isainfante.org/",
+            "email": "isainfanteforgovernoroftenn@gmail.com",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/783179161715406"
+              }
+            ]
+          },
+          {
+            "name": "Steven Damon Coburn",
+            "party": "Independent",
+            "candidateUrl": "http://stevendamoncoburn.com/"
+          },
+          {
+            "name": "John Jay Hooker",
+            "party": "Independent",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/johnjay.hooker"
+              }
+            ]
+          },
+          {
+            "name": "Daniel T. Lewis",
+            "party": "Independent",
+            "candidateUrl": "http://www.lewisdt.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/dl4governor"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "General",
+        "office": "Tennessee Senate District 31",
+        "level": [
+          "administrativeArea1"
+        ],
+        "roles": [
+          "legislatorUpperBody"
+        ],
+        "district": {
+          "name": "Tennessee State Senate district 31",
+          "scope": "stateUpper",
+          "id": "ocd-division/country:us/state:tn/sldu:31"
+        },
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ],
+        "candidates": [
+          {
+            "name": "Brian Kelsey",
+            "party": "Republican",
+            "candidateUrl": "http://www.briankelsey.org/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/briankelsey"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "General",
+        "office": "Tennessee House of Representatives District 96",
+        "level": [
+          "administrativeArea1"
+        ],
+        "roles": [
+          "legislatorLowerBody"
+        ],
+        "district": {
+          "name": "Tennessee State House district 96",
+          "scope": "stateLower",
+          "id": "ocd-division/country:us/state:tn/sldl:96"
+        },
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ],
+        "candidates": [
+          {
+            "name": "Steve McManus",
+            "party": "Republican"
+          },
+          {
+            "name": "Dwayne Thompson",
+            "party": "Democratic",
+            "candidateUrl": "http://www.votethompson96.com/",
+            "channels": [
+              {
+                "type": "Facebook",
+                "id": "https://www.facebook.com/dwaynethompsoncampaign"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Referendum",
+        "district": {
+          "name": "Tennessee",
+          "scope": "statewide",
+          "id": "ocd-division/country:us/state:tn"
+        },
+        "referendumTitle": "Constitutional Amendment #1",
+        "referendumUrl": "http://state.tn.us/sos/election/amendments/CombinedAmendments.pdf",
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ]
+      },
+      {
+        "type": "Referendum",
+        "district": {
+          "name": "Tennessee",
+          "scope": "statewide",
+          "id": "ocd-division/country:us/state:tn"
+        },
+        "referendumTitle": "Constitutional Amendment #2",
+        "referendumUrl": "http://state.tn.us/sos/election/amendments/CombinedAmendments.pdf",
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ]
+      },
+      {
+        "type": "Referendum",
+        "district": {
+          "name": "Tennessee",
+          "scope": "statewide",
+          "id": "ocd-division/country:us/state:tn"
+        },
+        "referendumTitle": "Constitutional Amendment #3",
+        "referendumUrl": "http://state.tn.us/sos/election/amendments/CombinedAmendments.pdf",
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ]
+      },
+      {
+        "type": "Referendum",
+        "district": {
+          "name": "Tennessee",
+          "scope": "statewide",
+          "id": "ocd-division/country:us/state:tn"
+        },
+        "referendumTitle": "Constitutional Amendment #4",
+        "referendumUrl": "http://state.tn.us/sos/election/amendments/CombinedAmendments.pdf",
+        "sources": [
+          {
+            "name": "Ballot Information Project",
+            "official": false
+          }
+        ]
+      }
+    ],
+    "state": [
+      {
+        "name": "Tennessee",
+        "electionAdministrationBody": {
+          "name": "Tennessee Department of State, Division of Elections",
+          "electionInfoUrl": "http://www.tn.gov/sos/election",
+          "votingLocationFinderUrl": "https://web.go-vote-tn.elections.tn.gov/search",
+          "ballotInfoUrl": "https://web.go-vote-tn.elections.tn.gov/search",
+          "correspondenceAddress": {
+            "line1": "312 Rosa L. Parks Ave., 7th Floor, William R. Snodgrass Tower",
+            "city": "Nashville",
+            "state": "Tennessee",
+            "zip": "37243-1102"
+          }
+        },
+        "local_jurisdiction": {
+          "name": "Shelby County",
+          "electionAdministrationBody": {
+            "electionInfoUrl": "http://www.shelbyvote.com/",
+            "physicalAddress": {
+              "line1": "157 POPLAR AVE STE 137",
+              "city": "MEMPHIS",
+              "state": "TN",
+              "zip": "38103-1948"
+            },
+            "electionOfficials": [
+              {
+                "officePhoneNumber": "(901) 222-1200",
+                "emailAddress": "voteinfo@shelbycountytn.gov"
+              }
+            ]
+          },
+          "sources": [
+            {
+              "name": "DemocracyWorks",
+              "official": false
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "",
+            "official": false
+          }
+        ]
+      }
+    ],
+    "kind": "civicinfo#voterInfoResponse"
+  }
+  

@@ -1,8 +1,8 @@
 import React from 'react';
 import VoterContest from '../voters/contests/Voter-Contest';
 import VoterState from './Voter-State';
-import VoterEarlyVote from './Voter-EarlyVote'
-import VoterDropOff from './Voter-DropOff'
+import VoterEarlyVote from './earlyvote/Voter-EarlyVote'
+import VoterDropOff from './dropoff/Voter-DropOff'
 import ErrorBoundary from '../shared/errorboundary';
 import './contests/voter.css';
 

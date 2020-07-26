@@ -6,12 +6,11 @@ export const getVotersSvc = async (addr, electionId) => {
 
 	const { address } = addr;
 	const url = withQuery(config.VOTER_URL,{
-		key:config.API_KEY,
-		address: encodeURI(address),
+		address: address,
 		electionId:electionId,
+		key:config.API_KEY,
 		
 	})
-
 
 	return await fetch(url);
 };
