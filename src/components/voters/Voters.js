@@ -11,10 +11,11 @@ function Voters(address) {
 		voterIsLoading: state.voterIsLoading,
 		elections: state.elections,
 		electionId: state.electionId,
-		showVoter: state.showVoter
+		showVoter: state.showVoter,
+		
 	}));
 
-	const setAddress = useStoreActions((actions) => actions.setAddress);
+
 	const getVoters = useStoreActions((actions) => actions.getVoters);
 	const setElectionIds = useStoreActions((actions) => actions.setElectionIds);
 	const setVoterIsLoading = useStoreActions((actions) => actions.setVoterIsLoading);
@@ -22,17 +23,16 @@ function Voters(address) {
 	useEffect(
 		
 		() => {
-			console.log('in voter',address)
-			setAddress(address);
+		
 			getVoters(address);
 			setElectionIds(elections);
 			if (voters) {
-				console.log(voterIsLoading);
+
 				setVoterIsLoading(true);
 			}
 			// eslint-disable-next-line
 		},
-		[  voterIsLoading,electionId ]
+		[ voterIsLoading, electionId]
 	);
 
 	return (

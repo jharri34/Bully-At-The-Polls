@@ -1,38 +1,31 @@
 {
   "election": {
-    "id": "4979",
-    "name": "Georgia General Primary Runoff Election",
-    "electionDay": "2020-08-11",
-    "ocdDivisionId": "ocd-division/country:us/state:ga"
+    "id": "5005",
+    "name": "Washington State Primary Election",
+    "electionDay": "2020-08-04",
+    "ocdDivisionId": "ocd-division/country:us/state:wa"
   },
   "normalizedInput": {
-    "line1": "1450 La France Street Northeast",
-    "city": "Atlanta",
-    "state": "GA",
-    "zip": "38016"
+    "line1": "175 David Street",
+    "city": "Camano",
+    "state": "WA",
+    "zip": "98282"
   },
-  "state": [
+  "earlyVoteSites": [
     {
-      "name": "Georgia",
-      "electionAdministrationBody": {
-        "name": "STATE Board of Elections",
-        "electionInfoUrl": "http://sos.ga.gov/index.php/elections",
-        "electionRegistrationUrl": "https://registertovote.sos.ga.gov/GAOLVR/",
-        "electionRegistrationConfirmationUrl": "https://www.mvp.sos.ga.gov/MVP/",
-        "absenteeVotingInfoUrl": "http://sos.ga.gov/index.php/Elections/absentee_voting_in_georgia",
-        "votingLocationFinderUrl": "https://www.mvp.sos.ga.gov/MVP/",
-        "ballotInfoUrl": "https://www.mvp.sos.ga.gov/MVP/",
-        "electionRulesUrl": "http://sos.ga.gov/index.php/Elections/register_to_vote",
-        "physicalAddress": {
-          "locationName": "STATE Board of Elections",
-          "line1": "2 MLK JR. DRIVE SUITE 802",
-          "line2": "FLOYD",
-          "line3": "WEST TOWER",
-          "city": "Atlanta",
-          "state": "GA",
-          "zip": "30334"
-        }
+      "address": {
+        "locationName": "Island County Auditor's Office",
+        "line1": "400 North Main Street",
+        "city": "Coupeville",
+        "state": "WA",
+        "zip": "98239"
       },
+      "notes": "",
+      "pollingHours": "Office is open Monday through Friday 8:00 a.m. to 4:30 p.m. On Election Day only, the office is open 8:00 a.m to 8:00 p.m. Drop box is open 24 hours a day starting 18 days before the election, and will be closed promptly at 8 p.m. on election night.",
+      "name": "Island County Auditor's Office",
+      "voterServices": "VSPC",
+      "startDate": "",
+      "endDate": "",
       "sources": [
         {
           "name": "Voting Information Project",
@@ -41,5 +34,187 @@
       ]
     }
   ],
+  "dropOffLocations": [
+    {
+      "address": {
+        "locationName": "Camano Island Annex",
+        "line1": "121 N. East Camano Drive",
+        "city": "Camano Island",
+        "state": "WA",
+        "zip": "98282"
+      },
+      "notes": "NULL",
+      "pollingHours": "Drop box is open 24 hours a day starting 18 days before the election, and will be closed promptly at 8 p.m. on election night.",
+      "name": "Camano Island Annex",
+      "voterServices": "Drop off",
+      "startDate": "",
+      "endDate": "",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "Island County Auditor's",
+        "line1": "400 N. Main Street",
+        "city": "Coupeville",
+        "state": "WA",
+        "zip": "98239"
+      },
+      "notes": "NULL",
+      "pollingHours": "NULL",
+      "name": "Island County Auditor's",
+      "voterServices": "Drop off",
+      "startDate": "",
+      "endDate": "",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "Oak Harbor City Hall",
+        "line1": "865 SE Barrington Dr.",
+        "city": "Oak Harbor",
+        "state": "WA",
+        "zip": "98277"
+      },
+      "notes": "NULL",
+      "pollingHours": "Drop box is open 24 hours a day starting 18 days before the election, and will be closed promptly at 8 p.m. on election night.",
+      "name": "Oak Harbor City Hall",
+      "voterServices": "Drop off",
+      "startDate": "",
+      "endDate": "",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "Langley Post Office",
+        "line1": "112 5th Street",
+        "city": "Langley",
+        "state": "WA",
+        "zip": "98260"
+      },
+      "notes": "NULL",
+      "pollingHours": "Drop box is open 24 hours a day starting 18 days before the election, and will be closed promptly at 8 p.m. on election night.",
+      "name": "Langley Post Office",
+      "voterServices": "Drop off",
+      "startDate": "",
+      "endDate": "",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "Trinity Lutheran Church",
+        "line1": "State Hwy 525 & Woodard Rd.",
+        "city": "Freeland",
+        "state": "WA",
+        "zip": "98249"
+      },
+      "notes": "NULL",
+      "pollingHours": "Drop box is open 24 hours a day starting 18 days before the election, and will be closed promptly at 8 p.m. on election night.",
+      "name": "Trinity Lutheran Church",
+      "voterServices": "Drop off",
+      "startDate": "",
+      "endDate": "",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "Ken's Korner Red Apple Grocery",
+        "line1": "4141 SR 525",
+        "city": "Clinton",
+        "state": "WA",
+        "zip": "98236"
+      },
+      "notes": "NULL",
+      "pollingHours": "Drop box is open 24 hours a day starting 18 days before the election, and will be closed promptly at 8 p.m. on election night.",
+      "name": "Ken's Korner Red Apple Grocery",
+      "voterServices": "Drop off",
+      "startDate": "",
+      "endDate": "",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "state": [
+    {
+      "name": "Washington",
+      "electionAdministrationBody": {
+        "name": "Washington Secretary of State",
+        "electionInfoUrl": "http://www.sos.wa.gov/elections",
+        "votingLocationFinderUrl": "https://weiapplets.sos.wa.gov/MyVote/#/login",
+        "ballotInfoUrl": "https://weiapplets.sos.wa.gov/MyVote/#/login",
+        "correspondenceAddress": {
+          "line1": "P.o. Box 40229",
+          "city": "Olympia",
+          "state": "Washington",
+          "zip": "98504-0229"
+        }
+      },
+      "local_jurisdiction": {
+        "name": "Island County",
+        "electionAdministrationBody": {
+          "electionInfoUrl": "https://www.islandcountywa.gov/auditor",
+          "correspondenceAddress": {
+            "line1": "PO BOX 1410",
+            "city": "COUPEVILLE",
+            "state": "WA",
+            "zip": "98239-1410"
+          },
+          "physicalAddress": {
+            "line1": "400 N MAIN ST",
+            "city": "COUPEVILLE",
+            "state": "WA",
+            "zip": "98239-3416"
+          },
+          "electionOfficials": [
+            {
+              "officePhoneNumber": "(360) 679-7366",
+              "emailAddress": "elections@co.island.wa.us"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "DemocracyWorks",
+            "official": false
+          }
+        ]
+      },
+      "sources": [
+        {
+          "name": "",
+          "official": false
+        }
+      ]
+    }
+  ],
+  "mailOnly": true,
   "kind": "civicinfo#voterInfoResponse"
 }

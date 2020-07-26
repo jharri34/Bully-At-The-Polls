@@ -8,6 +8,7 @@ const Elections = (address) => {
 	const { elections, electionIsLoading } = useStoreState((state) => ({
 		elections: state.elections,
 		electionIsLoading: state.electionIsLoading
+
 	}));
 
 	const getElections = useStoreActions((actions) => actions.getElections);

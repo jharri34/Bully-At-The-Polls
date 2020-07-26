@@ -46,7 +46,6 @@ function VoterContest({ contests }) {
 	// 	}
 	// };
 	const classes = useStyles();
-	console.log('contests', contests);
 	return (
 		<div>
 			<ErrorBoundary>

@@ -1,11 +1,13 @@
 import React from 'react';
 import VoterContest from '../voters/contests/Voter-Contest';
 import VoterState from './Voter-State';
+import VoterEarlyVote from './Voter-EarlyVote'
+import VoterDropOff from './Voter-DropOff'
 import ErrorBoundary from '../shared/errorboundary';
 import './contests/voter.css';
 
 const VoterDetails = ({ voters }) => {
-	
+	console.log(voters)
 	return (
 		<div>
 			<ErrorBoundary>
@@ -14,7 +16,10 @@ const VoterDetails = ({ voters }) => {
 						{(typeof voters.state === 'undefined') ? <div /> :( <VoterState voterstate={voters.state} />)}
 					</div>
 				</div>
+				{(typeof voters.dropOffLocations === 'undefined') ? <div /> : (<VoterDropOff dropOff={voters.dropOffLocations} />)}
+				{(typeof voters.earlyVoteSites === 'undefined') ? <div /> : (<VoterEarlyVote earlyVote={voters.earlyVoteSites} />)}
 				{(typeof voters.contests === 'undefined') ? <div /> : (<VoterContest contests={voters.contests} />)}
+				
 			</ErrorBoundary>
 		</div>
 	);

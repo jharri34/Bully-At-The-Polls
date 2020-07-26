@@ -2,7 +2,6 @@ import React from 'react';
 import Link from '@material-ui/core/Link';
 
 function VoterState({ voterstate }) {
-	console.log('voterstate', voterstate)
 	return (
 		<div>
 			<div>
