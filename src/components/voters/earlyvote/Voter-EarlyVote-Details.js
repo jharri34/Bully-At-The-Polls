@@ -68,7 +68,6 @@ const AccordionDetails = withStyles((theme) => ({
 
 
 function VoterEarlyVoterDetails({ earlyVote }) {
-	console.log(earlyVote);
 	return (
 		<div>
 			{earlyVote.map((vote, item) => (

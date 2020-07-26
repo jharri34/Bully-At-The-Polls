@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
 import ErrorBoundary from '../shared/errorboundary';
+import { Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
@@ -17,10 +18,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ElectionDetails = ({ elections }) => {
-	const { stateOfElection} = useStoreState((state) => ({
+	const { stateOfElection } = useStoreState((state) => ({
 		stateOfElection: state.stateOfElection
 	}));
-
 
 	const classes = useStyles();
 	const setShowVoter = useStoreActions((actions) => actions.setShowVoter);
@@ -33,38 +33,34 @@ const ElectionDetails = ({ elections }) => {
 			setShowVoter(true);
 		}
 	};
-	
 
 	const santizieElections = (elections) => {
-		let removeElections = []
+		let removeElections = [];
 		elections.map((elect, index) => {
-			if(elect.ocdDivisionId.split("state:")[1] ) {
-				removeElections.push(elect)
+			if (elect.ocdDivisionId.split('state:')[1]) {
+				removeElections.push(elect);
 			}
-		})
+		});
 		return removeElections;
-	}
+	};
 
 	const filterState = (elections, stateOfElection) => {
-		return elections.filter((el)=>{
-			if(el.ocdDivisionId.split("state:")[1] === stateOfElection)
-			return el
-		})
-	}
+		return elections.filter((el) => {
+			if (el.ocdDivisionId.split('state:')[1] === stateOfElection) return el;
+		});
+	};
 
-	let santiziedElections = santizieElections(elections)
-	elections = filterState(santiziedElections, stateOfElection)
-//	removeElectionsNotApplicable(elections,removeElections);
-
-
-
-
-	
-
+	let santiziedElections = santizieElections(elections);
+	elections = filterState(santiziedElections, stateOfElection);
+	console.log(elections)
 	return (
 		<div className={classes.root}>
 			<ErrorBoundary>
 				<div className="election-wrapper">
+				{(() => {
+				if (
+					Object.keys(elections).length !== 0
+				) { return (
 					<ButtonGroup variant="text" color="primary" aria-label="text primary button group">
 						{elections.map((election, index) => (
 							<Button
@@ -79,7 +75,15 @@ const ElectionDetails = ({ elections }) => {
 								</div>
 							</Button>
 						))}
-					</ButtonGroup>
+					</ButtonGroup>)
+							} else {
+								return (
+									<div>
+										<Typography>No Election Data Available</Typography>
+									</div>
+								);
+							}
+						})()}
 				</div>
 			</ErrorBoundary>
 		</div>

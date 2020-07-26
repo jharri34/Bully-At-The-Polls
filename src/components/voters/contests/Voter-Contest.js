@@ -21,30 +21,6 @@ const useStyles = makeStyles((theme) => ({
 
 function VoterContest({ contests }) {
 
-	// const nonReferendum = (contests) => {
-	// 	if (contests) {
-	// 		[].concat(
-	// 			...contests.map((contest) => {
-	// 				if (contest.type !== config.REFERENDUM) {
-	// 					return contest;
-	// 				}
-	// 			})
-	// 		);
-	// 	}
-	// };
-
-	// const referendum = (contests) => {
-
-	// 	if (contests) {
-	// 		[].concat(
-	// 			...contests.map((contest) => {
-	// 				if (contest.type === config.REFERENDUM) {
-	// 					return contest;
-	// 				}
-	// 			})
-	// 		);
-	// 	}
-	// };
 	const classes = useStyles();
 	return (
 		<div>
