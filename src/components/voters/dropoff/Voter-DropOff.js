@@ -6,7 +6,7 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
-import ErrorBoundary from '../../shared/errorboundary'
+
 import VoterDropOffDetails from './Voter-DropOff-Details'
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -71,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
 
 function VoterDropOff({dropOff}){
 	const classes = useStyles();
-	console.log(dropOff)
 	const [ expanded, setExpanded ] = React.useState('false');
 
 	const handleChange = (panel) => (event, newExpanded) => {
@@ -80,13 +79,13 @@ function VoterDropOff({dropOff}){
 
     return (
       
-		<div className="nonreferendum-container">
+		<div >
 			<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
 				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
 
 						{' '}
-						<div className="nonreferendum-items">
-							<div className="contest-office"><Typography>Drop Off Locations</Typography></div>
+						<div >
+							<div><Typography>Drop Off Locations</Typography></div>
 						</div>
 					
 				</AccordionSummary>

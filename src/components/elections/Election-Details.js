@@ -38,7 +38,7 @@ const ElectionDetails = ({ elections }) => {
 	const santizieElections = (elections) => {
 		let removeElections = []
 		elections.map((elect, index) => {
-			if(!elect.ocdDivisionId.split("state:")[1] ) {
+			if(elect.ocdDivisionId.split("state:")[1] ) {
 				removeElections.push(elect)
 			}
 		})
@@ -53,8 +53,8 @@ const ElectionDetails = ({ elections }) => {
 	}
 
 	let santiziedElections = santizieElections(elections)
-	// elections = filterState(santiziedElections, stateOfElection)
-	// removeElectionsNotApplicable(elections,removeElections);
+	elections = filterState(santiziedElections, stateOfElection)
+//	removeElectionsNotApplicable(elections,removeElections);
 
 
 

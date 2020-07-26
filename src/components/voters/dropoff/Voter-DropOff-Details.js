@@ -8,6 +8,7 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import formatAddress from '../../shared/common'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -65,11 +66,7 @@ const AccordionDetails = withStyles((theme) => ({
 	}
 }))(MuiAccordionDetails);
 
-const formatAddress = (dropOffAddress) =>{
-const {locationName, line1, city, state, zip} =dropOffAddress
-return `${locationName} ${line1} ${city}, ${state} ${zip}`
 
-}
 
 
 function VoterDropOffDetails({ dropOff }) {
