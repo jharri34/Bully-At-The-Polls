@@ -6,10 +6,9 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from '@material-ui/core/Grid';
-
 import VoterDropOffDetails from './Voter-DropOff-Details'
 import { makeStyles } from '@material-ui/core/styles';
-
+import './dropoff.css';
 const Accordion = withStyles({
 	root: {
 		border: '1px solid rgba(0, 0, 0, .125)',
@@ -79,7 +78,8 @@ function VoterDropOff({dropOff}){
 
     return (
       
-		<div >
+		<div className="dropoff-container" >
+			<div>
 			<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
 				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
 
@@ -93,6 +93,7 @@ function VoterDropOff({dropOff}){
 					{<VoterDropOffDetails dropOff={dropOff} />}
 				</AccordionDetails>
 			</Accordion>
+			</div>
         </div>
     )
 }

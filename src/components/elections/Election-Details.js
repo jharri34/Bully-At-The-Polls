@@ -6,6 +6,8 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
 import ErrorBoundary from '../shared/errorboundary';
 import { Typography } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
@@ -55,6 +57,7 @@ const ElectionDetails = ({ elections }) => {
 	console.log(elections)
 	return (
 		<div className={classes.root}>
+			<Grid container direction="column" justify="cente" alignItems="center">
 			<ErrorBoundary>
 				<div className="election-wrapper">
 				{(() => {
@@ -86,6 +89,7 @@ const ElectionDetails = ({ elections }) => {
 						})()}
 				</div>
 			</ErrorBoundary>
+			</Grid>
 		</div>
 	);
 };

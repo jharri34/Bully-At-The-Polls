@@ -8,22 +8,19 @@ import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import formatAddress from '../../shared/common'
+import formatAddress from '../../shared/common';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		flexGrow: 1,
-		'& .MuiTextField-root': {
-			margin: theme.spacing(1),
-			width: '25ch'
-		},
-		paper: {
-			padding: theme.spacing(2),
-			textAlign: 'center',
-			color: theme.palette.text.secondary
-		}
+const useStyles = makeStyles({
+	table: {
+		minWidth: 650
 	}
-}));
+});
 
 const Accordion = withStyles({
 	root: {
@@ -66,20 +63,32 @@ const AccordionDetails = withStyles((theme) => ({
 	}
 }))(MuiAccordionDetails);
 
-
-
-
 function VoterDropOffDetails({ dropOff }) {
-	console.log(dropOff);
+	const classes = useStyles();
 	return (
-		<div>
-			{dropOff.map((drop, item) => (
-				<div key={item} >
-					<div>{drop.name}</div>
-					<div>{formatAddress(drop.address)}</div>
-					<div>{drop.pollingHours}</div>
-				</div>
-			))}
+		<div className="dropoff-container">
+			<TableContainer component={Paper}>
+				<Table className={classes.table} size="small" aria-label="a dense table">
+					<TableHead>
+						<TableRow>
+							<TableCell>Name</TableCell>
+							<TableCell align="right">Address</TableCell>
+							<TableCell align="right">Notes</TableCell>
+						</TableRow>
+					</TableHead>
+					<TableBody>
+						{dropOff.map((drop, item) => (
+							<TableRow key={item}>
+								<TableCell component="th" scope="row">
+									{drop.name}
+								</TableCell>
+								<TableCell align="right">{formatAddress(drop.address)}</TableCell>
+								<TableCell align="right">{drop.pollingHours}</TableCell>
+							</TableRow>
+						))}
+					</TableBody>
+				</Table>
+			</TableContainer>
 		</div>
 	);
 }

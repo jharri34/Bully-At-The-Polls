@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import ErrorBoundary from '../../shared/errorboundary';
 import { makeStyles } from '@material-ui/core/styles';
 import VoterEarlyVoterDetails from './Voter-EarlyVote-Details';
-
+import './earlyvote.css';
 const Accordion = withStyles({
 	root: {
 		border: '1px solid rgba(0, 0, 0, .125)',
@@ -76,7 +76,8 @@ function VoterEarlyVote({ earlyVote }) {
 	};
 
 	return (
-		<div>
+		<div className="earlyvotee-container">
+			<div>
 			<Accordion square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
 				<AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ExpandMoreIcon />}>
 					{' '}
@@ -88,6 +89,7 @@ function VoterEarlyVote({ earlyVote }) {
 				</AccordionSummary>
 				<AccordionDetails>{<VoterEarlyVoterDetails earlyVote={earlyVote} />}</AccordionDetails>
 			</Accordion>
+			</div>
 		</div>
 	);
 }
